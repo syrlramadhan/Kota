@@ -1,5 +1,5 @@
 @import 'animate.css';
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:wght@700&display=swap');
 
 
 @tailwind base;
@@ -7,13 +7,21 @@
 @tailwind utilities;
 
 :root {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-weight: 700;
 }
 
 body {
   margin: 0;
   background-color: #f9fafb;
   color: #1f2937;
+  padding-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-bottom: 0;
+  }
 }
 
 .navbar {
@@ -22,9 +30,10 @@ body {
   left: 50%;
   transform: translateX(-50%);
   background: #f9fafb;
+  border: 1px solid #e5e7eb;
   border-radius: 9999px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 20000;
+  z-index: 30000;
   width: auto;
   max-width: 360px;
 }
@@ -33,20 +42,34 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
   color: #1f2937;
   transition: color 0.3s ease;
+  width: 60px;
 }
 
 .nav-link:hover {
   color: #4b5563;
 }
 
+.nav-link svg {
+  margin-bottom: 0.25rem;
+}
+
+.nav-link span {
+  font-size: 0.65rem;
+  line-height: 1;
+}
+
+.md\:hidden.flex {
+  gap: 0;
+}
+
 section {
   position: relative;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
-  z-index: 1;
+  z-index: 10;
 }
 
 section.visible {
@@ -54,13 +77,13 @@ section.visible {
 }
 
 .cta-button {
-  background: #0D89CA; /* Mengganti gradien dengan warna solid #0D89CA */
-  transition: transform 0.3s ease, filter 0.3s ease; /* Menambahkan transisi untuk filter */
+  background: #0D89CA;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .cta-button:hover {
   transform: scale(1.05);
-  filter: brightness(1.1); /* Mencerahkan tombol saat hover */
+  filter: brightness(1.1);
 }
 
 .card {
@@ -204,24 +227,24 @@ section.visible {
   max-width: 150px;
 }
 
-/* Gaya untuk teks dalam marquee */
 .marquee-text {
-  color: #1f2937; /* Warna teks solid untuk memastikan terlihat */
-  letter-spacing: 0.05em; /* Jarak antar huruf */
-  transition: all 0.3s ease; /* Transisi untuk efek hover */
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-weight: 900;
+  color: #1f2937;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
 }
 
 .marquee-text:hover {
-  letter-spacing: 0.1em; /* Efek hover: jarak antar huruf bertambah */
-  filter: brightness(1.2); /* Efek hover: teks lebih terang */
+  letter-spacing: 0.1em;
+  filter: brightness(1.2);
 }
 
-/* Gaya untuk card tim */
 .team-card {
   background: #ffffff;
   border-radius: 0.75rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  overflow: hidden; /* Memastikan foto dan overlay tidak meluap */
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -230,32 +253,28 @@ section.visible {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Container foto tim */
 .team-photo-container {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-/* Gaya foto tim */
 .team-photo {
   transition: transform 0.3s ease;
 }
 
 .team-card:hover .team-photo {
-  transform: scale(1.05); /* Efek zoom pada foto */
+  transform: scale(1.05);
 }
 
-/* Gaya overlay */
 .team-overlay {
   transition: opacity 0.3s ease;
 }
 
 .team-card:hover .team-overlay {
-  opacity: 0.8; /* Overlay sedikit lebih terang saat hover */
+  opacity: 0.8;
 }
 
-/* Gaya tautan LinkedIn */
 .team-linkedin {
   display: inline-block;
   margin-top: 0.5rem;
@@ -265,18 +284,10 @@ section.visible {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Animasi fadeInUp dari animate.css */
 .animate__animated.animate__fadeInUp {
   --animate-duration: 0.8s;
 }
 
-/* Pastikan font Poppins digunakan */
-:root {
-  font-family: 'Poppins', 'Inter', sans-serif;
-}
-
-/* Warna primary untuk teks */
 .text-primary {
   color: #0D89CA;
 }
-
