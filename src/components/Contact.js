@@ -1,6 +1,54 @@
 'use client';
 
+import { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+
 export default function Contact({ formData, shakeFields, handleFormSubmit, handleInputChange }) {
+  const formRef = useRef();
+  const [loading, setLoading] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    if (!formData.name || !formData.email || !formData.message) {
+      handleFormSubmit(e);
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_t1l2699',
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_thg1d55',
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'PG8UlB83rv3KBwZDr'
+      )
+      .then(
+        (result) => {
+          console.log('Email sent successfully:', result.text);
+          console.log('Response status:', result.status, result);
+          alert('Message sent successfully!');
+          handleInputChange({ target: { id: 'name', value: '' } });
+          handleInputChange({ target: { id: 'email', value: '' } });
+          handleInputChange({ target: { id: 'message', value: '' } });
+        },
+        (error) => {
+          console.error('Failed to send email:', error.text, error);
+          alert('Failed to send message. Please try again later.');
+        }
+      )
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
   return (
     <section id="contact" className="py-20 bg-[#f9fafb]">
       <div className="container mx-auto px-4">
@@ -9,7 +57,11 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
         </h2>
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="animate__animated animate__zoomIn" style={{ animationDelay: '0.2s' }}>
-            <form className="space-y-6 flex flex-col" onSubmit={handleFormSubmit}>
+            <form
+              ref={formRef}
+              className="space-y-6 flex flex-col"
+              onSubmit={sendEmail}
+            >
               <div className="input-icon">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -22,6 +74,7 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   className={`w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500 ${
                     shakeFields.name ? 'animate__animated animate__shakeX' : ''
                   }`}
@@ -43,6 +96,7 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   className={`w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500 ${
                     shakeFields.email ? 'animate__animated animate__shakeX' : ''
                   }`}
@@ -63,6 +117,7 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
                 </svg>
                 <textarea
                   id="message"
+                  name="message"
                   className={`w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500 ${
                     shakeFields.message ? 'animate__animated animate__shakeX' : ''
                   }`}
@@ -74,8 +129,12 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
                 ></textarea>
               </div>
               <div className="mt-4">
-                <button type="submit" className="cta-button w-full p-4 text-white font-semibold rounded-lg">
-                  Send Message
+                <button
+                  type="submit"
+                  className="cta-button w-full p-4 text-white font-semibold rounded-lg"
+                  disabled={loading}
+                >
+                  {loading ? 'Sending...' : 'Send Message'}
                 </button>
               </div>
             </form>

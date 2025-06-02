@@ -1,7 +1,6 @@
 @import 'animate.css';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:wght@700&display=swap');
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -89,11 +88,12 @@ section.visible {
 .card {
   background: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .typing-text {
@@ -101,6 +101,17 @@ section.visible {
   border-right: 2px solid #1f2937;
   white-space: nowrap;
   overflow: hidden;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #1f2937 }
 }
 
 .instagram-card {
@@ -148,6 +159,7 @@ section.visible {
 .accordion-content {
   display: none;
   background: #f9fafb;
+  transition: all 0.3s ease-in-out;
 }
 
 .accordion-content.active {
@@ -290,4 +302,90 @@ section.visible {
 
 .text-primary {
   color: #0D89CA;
+}
+
+/* Tambahan dari Hero Section */
+.hero-text-container {
+  position: relative;
+  z-index: 10;
+}
+
+/* Efek hover untuk tombol tambahan */
+.cta-button + .inline-block:hover {
+  transform: scale(1.05);
+}
+
+/* Pastikan animasi dari Animate.css berfungsi */
+.animate__animated.animate__fadeInDown {
+  --animate-duration: 1s;
+}
+
+.animate__animated.animate__fadeInUp {
+  --animate-duration: 1s;
+}
+
+.animate__animated.animate__fadeIn {
+  --animate-duration: 1.5s;
+}
+
+.animate__animated.animate__bounceIn {
+  --animate-duration: 1s;
+}
+
+/* Efek Ripple pada Tombol */
+.ripple-effect {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Animasi ZoomIn untuk Judul */
+.animate__animated.animate__zoomIn {
+  --animate-duration: 1s;
+}
+
+/* Dekorasi Tambahan untuk Services */
+section#services {
+  position: relative;
+}
+
+section#services .container {
+  position: relative;
+  z-index: 10;
+}
+
+section#services .absolute {
+  z-index: 0;
+}
+
+/* Efek Glowing untuk Garis Dekoratif */
+.glowing-line {
+  box-shadow: 0 0 10px rgba(13, 137, 202, 0.7), 0 0 20px rgba(13, 137, 202, 0.5);
+  animation: glowing 2s infinite;
+}
+
+@keyframes glowing {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+/* Transisi Accordion */
+.accordion-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.accordion-content.active {
+  max-height: 1000px; /* Nilai besar untuk memastikan konten terbuka penuh */
+  opacity: 1;
 }

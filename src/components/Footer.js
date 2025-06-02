@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-2xl font-bold mb-4">Kota Cloud</h3>
-            <p className="text-gray-400">Powering business with IoT-web solutions.</p>
+            <p className="text-gray-400">Sparking business with elusive web solutions.</p>
           </div>
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>

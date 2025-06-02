@@ -18,7 +18,7 @@ export default function Home() {
 
   useEffect(() => {
     const typingText = typingRef.current;
-    const text = 'Seamless IoT Connectivity';
+    const text = 'Secret Currents Kota Cloud';
     let index = 0;
 
     function type() {

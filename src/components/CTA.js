@@ -7,13 +7,13 @@ export default function CTA() {
     <section id="cta" className="py-20 bg-gradient-to-r from-gray-800 to-gray-900 text-white">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 animate__animated animate__fadeIn">
-          Ready to Simplify Your Business? 
+          Ready to Reshape Your Business?
         </h2>
         <p
           className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto animate__animated animate__fadeIn"
           style={{ animationDelay: '0.2s' }}
         >
-          Unlock seamless connectivity with Kota Cloud’s IoT-powered web solutions.
+          Ignite boundless connectivity with Kota Cloud’s enigmatic solutions.
         </p>
         <Link
           to="contact"
