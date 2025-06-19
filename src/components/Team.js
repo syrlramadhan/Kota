@@ -14,7 +14,7 @@ export default function Team() {
           >
             <div className="team-photo-container w-full h-full">
               <img
-                src="/kakdayat.png"
+                src="https://ucarecdn.com/d42216fa-102c-40af-92c4-a0e4385d9362/kakdayat.png"
                 alt="Nurhidayat"
                 className="team-photo w-full h-full rounded-xl object-cover transition-transform duration-300"
               />
@@ -37,7 +37,7 @@ export default function Team() {
           >
             <div className="team-photo-container w-full h-full">
               <img
-                src="/sahrul.png"
+                src="https://ucarecdn.com/70cd5451-6b23-4003-b095-a5f99900595f/sahrul.png"
                 alt="Syahrul Ramadhan"
                 className="team-photo w-full h-full rounded-xl object-cover transition-transform duration-300"
               />
@@ -62,7 +62,7 @@ export default function Team() {
           >
             <div className="team-photo-container w-full h-full">
               <img
-                src="/musdalipa.png"
+                src="https://ucarecdn.com/9e78644d-710a-4929-9ebb-033b18177247/musdalipa.png"
                 alt="Musdalipa"
                 className="team-photo w-full h-full rounded-xl object-cover transition-transform duration-300"
               />

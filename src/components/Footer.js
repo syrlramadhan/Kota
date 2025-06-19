@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-12">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 pb-10"> {/* Added pb-16 for extra bottom padding */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-2xl font-bold mb-4">Kota Cloud</h3>
@@ -36,7 +36,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="team" // Diubah dari "Team" ke "team" untuk konsistensi dan kecocokan ID
+                  to="team"
                   smooth={true}
                   duration={500}
                   className="footer-link text-gray-400 hover:text-white cursor-pointer"
@@ -59,8 +59,8 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
             <p className="text-gray-400 mb-2">Email: admin@kotacloud.com</p>
-            <p className="text-gray-400 mb-2">Phone: +62 831-3620-1962</p>
-            <p className="text-gray-400">Address: Jl. Karunrung Asri Utama, Makassar</p>
+            <p className="text-gray-400 mb-2">Phone: +62 812-8871-9249</p>
+            <p className="text-gray-400">Address: Jl. Mon. Emmy Saelan III, Makassar</p>
           </div>
           <div>
             <h4 className="text-lg font-semibold mb-4">Follow Us</h4>

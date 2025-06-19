@@ -147,15 +147,15 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
                   <strong>Email:</strong> admin@kotacloud.com
                 </p>
                 <p className="text-gray-600 mb-2">
-                  <strong>Phone:</strong> +62 831-3620-1962
+                  <strong>Phone:</strong> +62 812-8871-9249
                 </p>
                 <p className="text-gray-600">
-                  <strong>Address:</strong> Jl. Karunrung Asri Utama
+                  <strong>Address:</strong> Jl. Mon. Emmy Saelan III, Makassar
                 </p>
               </div>
               <div className="h-64">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!4v1748536095848!6m8!1m7!1sVqZedh7lCJ-P8djoAt586A!2m2!1d-5.182180756919967!2d119.4526687993037!3f55.914260695522145!4f-2.77831488981181!5f0.7820865974627469"
+                  src="https://www.google.com/maps/embed?pb=!4v1750308631270!6m8!1m7!1samvkcRjfs2zoIa_3y2-2gw!2m2!1d-5.176820337970915!2d119.4501674742598!3f97.10036459205142!4f-1.1303750972096651!5f1.3800324185612702"
                   width="600"
                   height="450"
                   style={{ border: '0', width: '100%', height: '100%' }}
@@ -163,6 +163,7 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
+                
               </div>
             </div>
           </div>

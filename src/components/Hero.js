@@ -33,12 +33,6 @@ export default function Hero({ typingRef }) {
         <h2 className="text-3xl md:text-5xl font-bold text-[#0D89CA] mb-6 animate__animated animate__zoomIn" style={{ animationDelay: '0.3s' }}>
           <span className="typing-text glowing-text" ref={typingRef}></span>
         </h2>
-        <p
-          className="text-base md:text-xl text-gray-600 mb-8 max-w-lg mx-auto animate__animated animate__fadeInUp"
-          style={{ animationDelay: '0.5s' }}
-        >
-          Secret Currents Kota Cloud
-        </p>
         <div className="flex justify-center gap-4 animate__animated animate__fadeInUp" style={{ animationDelay: '1s' }}>
           <Link
             to="contact"

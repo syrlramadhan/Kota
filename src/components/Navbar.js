@@ -5,12 +5,35 @@ import { Link } from 'react-scroll';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
 
   useEffect(() => {
+    // Handle scroll for navbar positioning
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
+
+    // Observe footer visibility
+    const footer = document.querySelector('footer');
+    if (footer) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            setIsFooterVisible(entry.isIntersecting || entry.boundingClientRect.top <= window.innerHeight);
+          });
+        },
+        {
+          threshold: [0, 0.1], // Trigger at 0% and 10% visibility
+          rootMargin: '0px 0px 100px 0px', // Extend observer range slightly below viewport
+        }
+      );
+      observer.observe(footer);
+      return () => observer.unobserve(footer);
+    } else {
+      console.warn('Footer element not found');
+    }
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -65,9 +88,9 @@ export default function Navbar() {
       </div>
       {/* Menu Mobile */}
       <div
-        className={`md:hidden flex space-x-3 justify-center w-full ${
+        className={`md:hidden flex space-x-3 justify-center w-full transition-all duration-300 ease-in-out ${
           isScrolled ? 'relative z-10' : 'fixed bottom-4 left-1/2 transform -translate-x-1/2 z-[30000]'
-        } bg-[#f9fafb] p-2 max-w-[360px]`}
+        } ${isFooterVisible ? 'bg-transparent' : 'bg-[#f9fafb]'} p-2 max-w-[360px]`}
       >
         <Link
           to="home"

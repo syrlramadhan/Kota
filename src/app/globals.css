@@ -23,6 +23,17 @@ body {
   }
 }
 
+/* Add this to remove white space below footer on mobile */
+footer {
+  margin-bottom: -80px; /* Offset the body padding-bottom on mobile */
+}
+
+@media (min-width: 768px) {
+  footer {
+    margin-bottom: 0; /* No offset needed on desktop */
+  }
+}
+
 .navbar {
   position: fixed;
   bottom: 1rem;
