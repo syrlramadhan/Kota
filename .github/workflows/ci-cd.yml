@@ -21,10 +21,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build & Export
-        run: |
-          npm run build
-          npm run export
+      - name: Build Project (Static Export)
+        run: npm run build
 
       - name: Upload Exported Files to Server
         uses: appleboy/scp-action@v0.1.4
