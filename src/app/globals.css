@@ -14,48 +14,71 @@ body {
   margin: 0;
   background-color: #f9fafb;
   color: #1f2937;
-  padding-bottom: 80px;
+  overflow-x: hidden;
+  padding-bottom: 80px; /* Space for navbar */
 }
 
 @media (min-width: 768px) {
   body {
-    padding-bottom: 0;
+    padding-bottom: 80px; /* Keep space for navbar on desktop */
   }
 }
 
-/* Add this to remove white space below footer on mobile */
+/* Remove white space below footer */
 footer {
-  margin-bottom: -80px; /* Offset the body padding-bottom on mobile */
+  margin-bottom: -80px;
 }
 
 @media (min-width: 768px) {
   footer {
-    margin-bottom: 0; /* No offset needed on desktop */
+    margin-bottom: -80px;
   }
 }
 
+/* Hide scrollbar globally */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Navbar styles */
 .navbar {
-  position: fixed;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #f9fafb;
+  background: rgba(249, 250, 251, 0.8); /* Slightly transparent background */
   border: 1px solid #e5e7eb;
   border-radius: 9999px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 30000;
-  width: auto;
+  width: 90%;
   max-width: 360px;
+  padding: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    max-width: 360px; /* Keep same width for consistency */
+    padding: 0.75rem;
+  }
 }
 
 .nav-link {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem;
   color: #1f2937;
   transition: color 0.3s ease;
   width: 60px;
+}
+
+@media (min-width: 768px) {
+  .nav-link {
+    padding: 0.75rem;
+    width: 70px;
+  }
 }
 
 .nav-link:hover {
@@ -71,8 +94,10 @@ footer {
   line-height: 1;
 }
 
-.md\:hidden.flex {
-  gap: 0;
+@media (min-width: 768px) {
+  .nav-link span {
+    font-size: 0.75rem;
+  }
 }
 
 section {
@@ -315,35 +340,29 @@ section.visible {
   color: #0D89CA;
 }
 
-/* Tambahan dari Hero Section */
+/* Hero Section */
 .hero-text-container {
   position: relative;
   z-index: 10;
 }
 
-/* Efek hover untuk tombol tambahan */
+/* Button Hover */
 .cta-button + .inline-block:hover {
   transform: scale(1.05);
 }
 
-/* Pastikan animasi dari Animate.css berfungsi */
-.animate__animated.animate__fadeInDown {
-  --animate-duration: 1s;
-}
-
-.animate__animated.animate__fadeInUp {
-  --animate-duration: 1s;
-}
-
+/* Animate.css Adjustments */
+.animate__animated.animate__fadeInDown,
+.animate__animated.animate__fadeInUp,
 .animate__animated.animate__fadeIn {
-  --animate-duration: 1.5s;
+  --animate-duration: 1s;
 }
 
 .animate__animated.animate__bounceIn {
   --animate-duration: 1s;
 }
 
-/* Efek Ripple pada Tombol */
+/* Ripple Effect */
 .ripple-effect {
   background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
   transform: scale(0);
@@ -357,16 +376,12 @@ section.visible {
   }
 }
 
-/* Animasi ZoomIn untuk Judul */
+/* ZoomIn Animation */
 .animate__animated.animate__zoomIn {
   --animate-duration: 1s;
 }
 
-/* Dekorasi Tambahan untuk Services */
-section#services {
-  position: relative;
-}
-
+/* Services Section */
 section#services .container {
   position: relative;
   z-index: 10;
@@ -376,7 +391,7 @@ section#services .absolute {
   z-index: 0;
 }
 
-/* Efek Glowing untuk Garis Dekoratif */
+/* Glowing Line */
 .glowing-line {
   box-shadow: 0 0 10px rgba(13, 137, 202, 0.7), 0 0 20px rgba(13, 137, 202, 0.5);
   animation: glowing 2s infinite;
@@ -388,7 +403,7 @@ section#services .absolute {
   100% { opacity: 0.8; }
 }
 
-/* Transisi Accordion */
+/* Accordion Transition */
 .accordion-content {
   overflow: hidden;
   max-height: 0;
@@ -397,6 +412,24 @@ section#services .absolute {
 }
 
 .accordion-content.active {
-  max-height: 1000px; /* Nilai besar untuk memastikan konten terbuka penuh */
+  max-height: 1000px;
   opacity: 1;
+}
+
+/* Responsive adjustments for About section */
+@media (max-width: 767px) {
+  #about .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  #about .flex {
+    gap: 2rem !important; /* Smaller gap on mobile */
+  }
+  #about .min-w-\\\[250px\\\] {
+    min-width: 150px !important; /* Smaller min-width on mobile */
+    max-width: 200px !important; /* Smaller max-width on mobile */
+  }
+  #about .scroller {
+    gap: 2rem !important; /* Match gap on mobile */
+  }
 }

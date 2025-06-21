@@ -10,6 +10,7 @@ import CTA from '@/components/CTA';
 import Contact from '@/components/Contact';
 import Modal from '@/components/Modal';
 
+
 export default function Home() {
   const [modal, setModal] = useState({ isOpen: false, title: '', message: '' });
   const typingRef = useRef(null);

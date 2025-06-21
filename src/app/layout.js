@@ -1,8 +1,7 @@
 import './globals.css';
-import Header from '@/components/Header';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-
+import 'animate.css';
 export const metadata = {
   title: 'Kota Cloud',
   description: 'Powering business with IoT-web solutions.',
@@ -18,7 +17,6 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <Header />
         <Navbar />
         {children}
         <Footer />
