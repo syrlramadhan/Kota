@@ -1,0 +1,49 @@
+name: Deploy Next.js (Static Export)
+
+on:
+  push:
+    branches:
+      - deployments
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build & Export
+        run: |
+          npm run build
+          npm run export
+
+      - name: Upload Exported Files to Server
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          source: |
+            out/*
+            package.json
+          target: "/root/kotacloud.com/kotacloud"
+
+      - name: Restart PM2 Serve App
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /root/kotacloud.com/kotacloud
+            npm install serve
+            pm2 start serve --name front-kota -- -s out -l 3000 || pm2 restart front-kota
