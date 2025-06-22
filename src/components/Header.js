@@ -35,7 +35,7 @@ export default function Header() {
       >
         <Link to="home" smooth={true} duration={500}>
           <img
-            src="/foto1.png"
+            src="/Logo.png"
             alt="Kota Cloud Logo"
             width={100}
             height={100}
