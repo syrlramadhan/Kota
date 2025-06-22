@@ -46,4 +46,4 @@ jobs:
             source "$NVM_DIR/nvm.sh"
             cd /root/kotacloud.com/kotacloud
             npm install serve
-            pm2 start serve --name front-kota -- -s out -l 3000 || pm2 restart front-kota
+            pm2 start npx --name front-kota -- serve -s out -l 3000 || pm2 restart front-kota
