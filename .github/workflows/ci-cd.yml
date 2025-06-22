@@ -24,6 +24,12 @@ jobs:
       - name: Build Project (Static Export)
         run: npm run build
 
+      - name: Cek isi folder out
+        run: ls -lah out || echo "folder out/ tidak ditemukan"
+
+      - name: Struktur semua folder
+        run: find .
+
       - name: Upload Exported Files to Server
         uses: appleboy/scp-action@v0.1.4
         with:
