@@ -23,9 +23,9 @@ export default function About() {
     { name: 'Construction & Site Operations', icon: <FaTools className="text-2xl text-primary" /> },
   ];
 
-  const cards = industries.map((industry) => (
+  const cards = industries.map((industry, index) => (
     <div
-      key={industry.name}
+      key={`${industry.name}-${index}`} // Unique key using name and index
       className="flex items-center gap-3 min-w-[200px] max-w-[250px]"
     >
       <div
@@ -51,16 +51,18 @@ export default function About() {
           -ms-overflow-style: none; /* IE and Edge */
         }
       `}</style>
-      <section id="about" className="py-20 pt-32 bg-gradient-to-b from-white to-[#f9fafb]">
+      <section id="about" className="py-10 pt-16 bg-gradient-to-b from-white to-[#f9fafb]">
         <div className="container mx-auto px-4 relative">
-          <ScrollVelocity
-            texts={[cards]}
-            velocity={-80}
-            className="flex gap-16"
-            numCopies={10}
-            parallaxStyle={{ margin: '0', overflow: 'hidden' }}
-            scrollerStyle={{ display: 'flex', alignItems: 'center', gap: '4rem', width: 'fit-content' }}
-          />
+          {cards.length > 0 && (
+            <ScrollVelocity
+              texts={[cards]}
+              velocity={-80}
+              className="flex gap-16"
+              numCopies={10}
+              parallaxStyle={{ margin: '0', overflow: 'hidden' }}
+              scrollerStyle={{ display: 'flex', alignItems: 'center', gap: '4rem', width: 'fit-content' }}
+            />
+          )}
         </div>
       </section>
     </>
