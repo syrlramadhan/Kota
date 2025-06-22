@@ -2,7 +2,6 @@
 
 import { Link } from 'react-scroll';
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
 
 const Squares = ({
   direction = 'diagonal',
@@ -162,8 +161,8 @@ export default function Hero() {
       <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20">
         <div className="bg-white p-2 rounded-full shadow-sm flex justify-center items-center">
           <Link to="home" smooth={true} duration={500} className="cursor-pointer">
-            <Image
-              src="/foto1.png"
+            <img
+              src="/Logo.png"
               alt="Kota Cloud Logo"
               width={100}
               height={100}
