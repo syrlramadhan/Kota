@@ -1,7 +1,6 @@
 'use client';
 
 import { Link } from 'react-scroll';
-import Image from 'next/image';
 
 export default function Header() {
   return (
@@ -35,7 +34,7 @@ export default function Header() {
         }}
       >
         <Link to="home" smooth={true} duration={500}>
-          <Image
+          <img
             src="/foto1.png"
             alt="Kota Cloud Logo"
             width={100}
