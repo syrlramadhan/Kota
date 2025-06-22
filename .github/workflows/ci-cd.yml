@@ -42,8 +42,8 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            source ~/.bashrc
+            export NVM_DIR="$HOME/.nvm"
+            source "$NVM_DIR/nvm.sh"
             cd /root/kotacloud.com/kotacloud
             npm install serve
             pm2 start serve --name front-kota -- -s out -l 3000 || pm2 restart front-kota
-
