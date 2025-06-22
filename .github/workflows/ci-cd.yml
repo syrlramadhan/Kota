@@ -37,7 +37,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           source: |
-            out/**
+            ./out/**
             package.json
           target: "/root/kotacloud.com/kotacloud"
 
