@@ -433,3 +433,48 @@ section#services .absolute {
     gap: 2rem !important; /* Match gap on mobile */
   }
 }
+
+/* Existing global.css content (not repeated for brevity) */
+
+/* Hide navbar when popup is open */
+body.popup-open .navbar {
+  display: none !important;
+}
+
+/* Ensure popup overlay is topmost */
+.popup-overlay {
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+  isolation: isolate;
+}
+
+/* Ensure popup content stays interactive */
+.popup-overlay > div {
+  pointer-events: auto !important;
+}
+
+/* Lock scrolling and position */
+body.popup-open {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+  top: 0 !important;
+  overscroll-behavior: none !important; /* Prevent bounce scrolling */
+}
+
+/* Suppress other content */
+body.popup-open * {
+  z-index: 10 !important;
+}
+
+body.popup-open .popup-overlay,
+body.popup-open .popup-overlay * {
+  z-index: 99999 !important;
+}
+
+/* Prevent scroll on html and body */
+html.popup-open,
+body.popup-open {
+  height: 100% !important;
+  overflow: hidden !important;
+}
