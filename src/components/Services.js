@@ -50,13 +50,13 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-[#f9fafb] to-white relative overflow-hidden">
+    <section id="services" className="py-16 bg-gradient-to-b from-[#f9fafb] to-white relative overflow-hidden">
       <div className="absolute top-0 left-0 w-2 h-full bg-[#0D89CA] opacity-20"></div>
       <div className="absolute top-0 right-0 w-2 h-full bg-[#0D89CA] opacity-20"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-16 tracking-tight">
-          Our Services
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-10 tracking-tight">
+          Our Product
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {servicesData.map((service, index) => (
@@ -76,7 +76,7 @@ export default function Services() {
             </div>
           ))}
         </div>
-        <div className="text-center mt-16">
+        <div className="text-center mt-10">
           <Link
             to="contact"
             smooth={true}
@@ -89,7 +89,7 @@ export default function Services() {
       </div>
 
       {popupContent && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[999999]">
           <div className="bg-white p-8 rounded-2xl shadow-xl max-w-lg w-full mx-4 relative">
             <button
               onClick={closePopup}
