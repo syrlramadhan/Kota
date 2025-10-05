@@ -105,19 +105,21 @@ export default function ModernHeader() {
   return (
     <>
       {/* Desktop Header - Ultra Modern */}
-      <header className="hidden lg:block fixed top-0 left-0 w-full z-50">
+      <header className="hidden lg:block fixed top-0 left-0 w-full z-50 transition-all duration-300">
         {/* Floating Navigation Container */}
-        <div className="container mx-auto px-6 py-4">
-          <div className="relative rounded-lg shadow-xl border border-gray-200 bg-white shadow-lg">
+        <div className="container mx-auto px-10 py-4">
+          <div className={`relative rounded-lg shadow-xl border border-gray-200 transition-all duration-300 ${
+            isScrolled ? 'bg-white/70 backdrop-blur-md border-gray-300' : 'bg-white shadow-lg'
+          }`}>
             {/* Navigation Content */}
-            <div className="relative flex items-center justify-between px-4 py-3">
+            <div className="relative flex items-center justify-between px-3 py-2">
               {/* Logo Section - Enhanced */}
               <div className="flex-shrink-0">
                 <NextLink href="/" className="group flex items-center gap-4 transition-all duration-300">
                   <div className="relative">
                     {/* Glowing Ring Effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-[#46B1CF] to-[#E80035] rounded-lg blur-sm opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
-                    <div className="relative bg-white p-1 rounded-lg shadow-lg group-hover:shadow-xl transition-all duration-300 w-12 h-12 flex items-center justify-center">
+                    <div className="relative bg-white p-1 rounded-lg shadow-lg group-hover:shadow-xl transition-all duration-300 w-10 h-10 flex items-center justify-center">
                       <Image
                         src="/logofix.png"
                         alt="Kota Cloud Logo"
@@ -131,7 +133,7 @@ export default function ModernHeader() {
                     <span className="text-2xl font-black bg-gradient-to-r from-[#46B1CF] to-[#E80035] bg-clip-text text-transparent leading-tight">
                       Kota Cloud
                     </span>
-                    <span className="text-sm font-medium text-gray-500 group-hover:text-[#46B1CF] transition-colors duration-300">
+                    <span className="text-xs font-medium text-gray-500 group-hover:text-[#46B1CF] transition-colors duration-300">
                       Digital Innovation Hub
                     </span>
                   </div>
@@ -146,7 +148,7 @@ export default function ModernHeader() {
                     <div className="absolute inset-0 bg-[#46B1CF] opacity-0 group-hover:opacity-10 rounded-xl transition-all duration-300 blur-sm"></div>
                     <NextLink
                       href={link.href}
-                      className={`relative flex items-center gap-3 px-5 py-3 rounded-lg text-sm font-semibold transition-all duration-300 ${
+                      className={`relative flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold transition-all duration-300 ${
                         isActive(link.href)
                           ? 'text-white bg-[#46B1CF] shadow-lg shadow-[#46B1CF]/25 transform scale-105'
                           : 'text-gray-700 hover:text-white hover:bg-[#46B1CF] hover:shadow-lg'
