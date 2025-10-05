@@ -107,7 +107,7 @@ export default function ModernHeader() {
       {/* Desktop Header - Ultra Modern */}
       <header className="hidden lg:block fixed top-0 left-0 w-full z-50 transition-all duration-300">
         {/* Floating Navigation Container */}
-        <div className="container mx-auto px-10 py-4">
+        <div className="container mx-auto px-6 lg:px-10 py-4">
           <div className={`relative rounded-lg shadow-xl border border-gray-200 transition-all duration-300 ${
             isScrolled ? 'bg-white/70 backdrop-blur-md border-gray-300' : 'bg-white shadow-lg'
           }`}>
@@ -208,7 +208,7 @@ export default function ModernHeader() {
           <div className="relative bg-white/10 backdrop-blur-2xl rounded-lg border border-white/20 shadow-2xl p-2">
             <div className="flex items-center justify-around">
               {navLinks.map((link, index) => (
-                <div key={link.href} className="relative group flex-1 max-w-20">
+                <div key={link.href} className="relative group flex-1 max-w-14">
                   {/* Active Background */}
                   {isActive(link.href) && (
                     <div className="absolute inset-0 bg-[#46B1CF] rounded-xl opacity-90 shadow-lg"></div>
@@ -216,7 +216,7 @@ export default function ModernHeader() {
                   
                   <NextLink
                     href={link.href}
-                    className={`relative flex flex-col items-center justify-center px-3 py-4 rounded-xl transition-all duration-300 group-hover:scale-110 ${
+                    className={`relative flex flex-col items-center justify-center px-3 py-2 rounded-xl transition-all duration-300 group-hover:scale-110 ${
                       isActive(link.href)
                         ? 'text-white transform scale-105'
                         : 'text-gray-600 hover:text-white hover:bg-[#46B1CF]'
@@ -224,8 +224,8 @@ export default function ModernHeader() {
                   >
                     <div className="relative mb-1">
                       <svg 
-                        className={`h-6 w-6 transition-all duration-300 ${
-                          isActive(link.href) ? 'animate-bounce' : 'group-hover:rotate-12'
+                        className={`h-5 w-5 transition-all duration-300 ${
+                          isActive(link.href) ? '' : 'group-hover:rotate-12'
                         }`} 
                         fill="none" 
                         stroke="currentColor" 
@@ -239,7 +239,7 @@ export default function ModernHeader() {
                       )}
                     </div>
                     
-                    <span className={`text-xs font-bold truncate transition-all duration-300 ${
+                    <span className={`text-[10px] font-bold truncate transition-all duration-300 ${
                       isActive(link.href) ? 'text-white' : 'text-gray-700'
                     }`}>
                       {link.shortLabel}
@@ -256,7 +256,7 @@ export default function ModernHeader() {
       </nav>
 
       {/* Spacer untuk mobile */}
-      <div className="lg:hidden h-24"></div>
+      <div className="lg:hidden h-20"></div>
 
       {/* CSS Animations */}
       <style jsx>{`        
