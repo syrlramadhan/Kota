@@ -184,14 +184,14 @@ export default function ModernHeader() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#46B1CF] to-[#E80035] rounded-lg blur-lg opacity-30 group-hover:opacity-50 transition-all duration-500 animate-pulse"></div>
           
           {/* Logo Container */}
-          <div className="relative bg-white/95 backdrop-blur-2xl rounded-lg shadow-2xl border border-white/30 transition-all duration-300 w-16 h-16 flex items-center justify-center">
+          <div className="relative bg-white/95 backdrop-blur-2xl rounded-lg shadow-2xl border border-white/30 transition-all duration-300 p-3 inline-block">
             <NextLink href="/">
               <Image
-                src="/foto1.png"
+                src="/logofix.png"
                 alt="Kota Cloud Logo"
-                width={36}
-                height={36}
-                className="transition-transform duration-300"
+                width={44}
+                height={44}
+                className="transition-transform duration-300 block"
               />
             </NextLink>
           </div>
