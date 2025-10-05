@@ -24,7 +24,7 @@ export default function BrandSection() {
       description: "Infrastruktur aman dengan pemisahan jaringan dan proteksi enterprise-grade",
       color: "#46B1CF"
     },
-    { 
+    {
       icon: Cloud,
       title: "Seamless Integration", 
       description: "Platform terintegrasi yang menghubungkan perangkat dan pengguna dalam satu ekosistem",
