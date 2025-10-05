@@ -105,27 +105,25 @@ export default function ModernHeader() {
   return (
     <>
       {/* Desktop Header - Ultra Modern */}
-      <header className="hidden lg:block fixed top-0 left-0 w-full z-50 transition-all duration-500">
+      <header className="hidden lg:block fixed top-0 left-0 w-full z-50">
         {/* Floating Navigation Container */}
         <div className="container mx-auto px-6 py-4">
-          <div className={`relative rounded-2xl shadow-xl border border-gray-200 transition-all duration-500 ${
-            isScrolled ? 'bg-white/50 backdrop-blur-lg shadow-2xl shadow-black/10' : 'bg-white shadow-lg'
-          }`}>
+          <div className="relative rounded-lg shadow-xl border border-gray-200 bg-white shadow-lg">
             {/* Navigation Content */}
-            <div className="relative flex items-center justify-between px-8 py-4">
+            <div className="relative flex items-center justify-between px-4 py-3">
               {/* Logo Section - Enhanced */}
               <div className="flex-shrink-0">
-                <NextLink href="/" className="group flex items-center gap-4 hover:scale-105 transition-all duration-300">
+                <NextLink href="/" className="group flex items-center gap-4 transition-all duration-300">
                   <div className="relative">
                     {/* Glowing Ring Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#46B1CF] to-[#E80035] rounded-full blur-sm opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
-                    <div className="relative bg-white p-3 rounded-full shadow-lg group-hover:shadow-xl transition-all duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#46B1CF] to-[#E80035] rounded-lg blur-sm opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                    <div className="relative bg-white p-1 rounded-lg shadow-lg group-hover:shadow-xl transition-all duration-300 w-12 h-12 flex items-center justify-center">
                       <Image
                         src="/logofix.png"
                         alt="Kota Cloud Logo"
-                        width={40}
-                        height={40}
-                        className="relative z-10 group-hover:scale-110 transition-transform duration-300"
+                        width={34}
+                        height={34}
+                        className="relative z-10 transition-transform duration-300"
                       />
                     </div>
                   </div>
@@ -149,15 +147,11 @@ export default function ModernHeader() {
                     
                     <NextLink
                       href={link.href}
-                      className={`relative flex items-center gap-3 px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
+                      className={`relative flex items-center gap-3 px-5 py-3 rounded-lg text-sm font-semibold transition-all duration-300 ${
                         isActive(link.href)
                           ? 'text-white bg-[#46B1CF] shadow-lg shadow-[#46B1CF]/25 transform scale-105'
                           : 'text-gray-700 hover:text-white hover:bg-[#46B1CF] hover:shadow-lg'
                       }`}
-                      style={{ 
-                        animationDelay: `${index * 100}ms`,
-                        animation: isScrolled ? `slideInDown 0.5s ease-out` : 'none'
-                      }}
                     >
                       <div className="relative">
                         <svg className="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -186,17 +180,17 @@ export default function ModernHeader() {
       <header className="lg:hidden fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
         <div className="relative group">
           {/* Glowing Effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#46B1CF] to-[#E80035] rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-all duration-500 animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#46B1CF] to-[#E80035] rounded-lg blur-lg opacity-30 group-hover:opacity-50 transition-all duration-500 animate-pulse"></div>
           
           {/* Logo Container */}
-          <div className="relative bg-white/95 backdrop-blur-2xl rounded-full p-4 shadow-2xl border border-white/30 group-hover:scale-110 transition-all duration-300">
+          <div className="relative bg-white/95 backdrop-blur-2xl rounded-lg shadow-2xl border border-white/30 transition-all duration-300 w-16 h-16 flex items-center justify-center">
             <NextLink href="/">
               <Image
                 src="/foto1.png"
                 alt="Kota Cloud Logo"
-                width={45}
-                height={45}
-                className="transition-transform duration-300 group-hover:rotate-12"
+                width={36}
+                height={36}
+                className="transition-transform duration-300"
               />
             </NextLink>
           </div>
@@ -207,10 +201,10 @@ export default function ModernHeader() {
       <nav className="lg:hidden fixed bottom-4 left-4 right-4 z-50">
         <div className="relative">
           {/* Background Glow */}
-          <div className="absolute inset-0 bg-[#46B1CF]/20 rounded-2xl blur-lg"></div>
+          <div className="absolute inset-0 bg-[#46B1CF]/20 rounded-lg blur-lg"></div>
           
           {/* Navigation Container */}
-          <div className="relative bg-white/10 backdrop-blur-2xl rounded-2xl border border-white/20 shadow-2xl p-2">
+          <div className="relative bg-white/10 backdrop-blur-2xl rounded-lg border border-white/20 shadow-2xl p-2">
             <div className="flex items-center justify-around">
               {navLinks.map((link, index) => (
                 <div key={link.href} className="relative group flex-1 max-w-20">
@@ -226,10 +220,6 @@ export default function ModernHeader() {
                         ? 'text-white transform scale-105'
                         : 'text-gray-600 hover:text-white hover:bg-[#46B1CF]'
                     }`}
-                    style={{
-                      animationDelay: `${index * 50}ms`,
-                      animation: 'slideInUp 0.5s ease-out'
-                    }}
                   >
                     <div className="relative mb-1">
                       <svg 
@@ -268,29 +258,7 @@ export default function ModernHeader() {
       <div className="lg:hidden h-24"></div>
 
       {/* CSS Animations */}
-      <style jsx>{`
-        @keyframes slideInDown {
-          from {
-            transform: translateY(-30px);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-        
-        @keyframes slideInUp {
-          from {
-            transform: translateY(30px);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-        
+      <style jsx>{`        
         .animate-float {
           animation: float 6s ease-in-out infinite;
         }
