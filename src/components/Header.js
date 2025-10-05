@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 
 export default function ModernHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const pathname = usePathname();
 
   const navLinks = [
@@ -49,7 +50,57 @@ export default function ModernHeader() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isActive = (href) => pathname === href;
+  useEffect(() => {
+    if (pathname !== '/') return;
+
+    const sections = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.id;
+            if (sectionId === 'home') {
+              setActiveSection('home');
+            } else if (sectionId === 'services') {
+              setActiveSection('services');
+            } else if (sectionId === 'contact') {
+              setActiveSection('contact');
+            }
+          }
+        });
+      },
+      { 
+        threshold: 0.3,
+        rootMargin: '-100px 0px -100px 0px'
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, [pathname]);
+
+  const isActive = (href) => {
+    if (pathname !== '/') {
+      // If not on home page, only match exact pathname
+      return pathname === href;
+    }
+    
+    // On home page, check active section
+    if (href === '/') {
+      return activeSection === 'home';
+    }
+    if (href === '/#services') {
+      return activeSection === 'services';
+    }
+    if (href === '/#contact') {
+      return activeSection === 'contact';
+    }
+    
+    return false;
+  };
 
   return (
     <>
@@ -94,14 +145,14 @@ export default function ModernHeader() {
                 {navLinks.map((link, index) => (
                   <div key={link.href} className="relative group">
                     {/* Hover Background Effect */}
-                    <div className={`absolute inset-0 bg-[${link.color}] opacity-0 group-hover:opacity-10 rounded-xl transition-all duration-300 blur-sm`}></div>
+                    <div className="absolute inset-0 bg-[#46B1CF] opacity-0 group-hover:opacity-10 rounded-xl transition-all duration-300 blur-sm"></div>
                     
                     <NextLink
                       href={link.href}
                       className={`relative flex items-center gap-3 px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                         isActive(link.href)
-                          ? `text-white bg-[${link.color}] shadow-lg shadow-[#46B1CF]/25 transform scale-105`
-                          : 'text-gray-700 hover:text-gray-700 hover:bg-[#46B1CF]/80 hover:shadow-lg'
+                          ? 'text-white bg-[#46B1CF] shadow-lg shadow-[#46B1CF]/25 transform scale-105'
+                          : 'text-gray-700 hover:text-white hover:bg-[#46B1CF] hover:shadow-lg'
                       }`}
                       style={{ 
                         animationDelay: `${index * 100}ms`,
@@ -165,7 +216,7 @@ export default function ModernHeader() {
                 <div key={link.href} className="relative group flex-1 max-w-20">
                   {/* Active Background */}
                   {isActive(link.href) && (
-                    <div className={`absolute inset-0 bg-[${link.color}] rounded-xl opacity-90 shadow-lg`}></div>
+                    <div className="absolute inset-0 bg-[#46B1CF] rounded-xl opacity-90 shadow-lg"></div>
                   )}
                   
                   <NextLink
@@ -173,7 +224,7 @@ export default function ModernHeader() {
                     className={`relative flex flex-col items-center justify-center px-3 py-4 rounded-xl transition-all duration-300 group-hover:scale-110 ${
                       isActive(link.href)
                         ? 'text-white transform scale-105'
-                        : 'text-gray-600 hover:text-gray-700 hover:bg-[#46B1CF]/80'
+                        : 'text-gray-600 hover:text-white hover:bg-[#46B1CF]'
                     }`}
                     style={{
                       animationDelay: `${index * 50}ms`,
