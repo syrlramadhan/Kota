@@ -18,7 +18,7 @@ export default function BrandSection() {
       description: "Kumpulkan insights berharga untuk analitik dan kampanye marketing yang tepat sasaran",
       color: "#E80035"
     },
-    { 
+    {
       icon: Shield,
       title: "Secure & Scalable", 
       description: "Infrastruktur aman dengan pemisahan jaringan dan proteksi enterprise-grade",
