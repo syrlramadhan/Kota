@@ -144,7 +144,6 @@ export default function ModernHeader() {
                   <div key={link.href} className="relative group">
                     {/* Hover Background Effect */}
                     <div className="absolute inset-0 bg-[#46B1CF] opacity-0 group-hover:opacity-10 rounded-xl transition-all duration-300 blur-sm"></div>
-                    
                     <NextLink
                       href={link.href}
                       className={`relative flex items-center gap-3 px-5 py-3 rounded-lg text-sm font-semibold transition-all duration-300 ${
