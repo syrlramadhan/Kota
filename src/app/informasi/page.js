@@ -2,12 +2,9 @@
 
 import { useEffect, useState, useRef } from 'react';
 import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Services from '@/components/Services';
-import FAQ from '@/components/FAQ';
-import Contact from '@/components/Contact';
-import Modal from '@/components/Modal';
+import Plus from '@/components/Plus';
+import Team from '@/components/Team';
+;
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -102,25 +99,12 @@ export default function Home() {
       <main className="relative">
         {/* Spacer untuk desktop header */}
         <div className="hidden lg:block h-16"></div>
+        <Plus />
         
-        <Hero typingRef={typingRef} />
-        <About /> 
-        <Services />
-        <FAQ />
-        <Contact
-          formData={formData}
-          shakeFields={shakeFields}
-          handleFormSubmit={handleFormSubmit}
-          handleInputChange={handleInputChange}
-        />
+        <Team />
+       
+        
       </main>
-
-   
-      
-      {/* Modal */}
-      <Modal modal={modal} setModal={setModal} />
-
-      <Footer />
     </>
   );
 }

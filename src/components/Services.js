@@ -1,114 +1,102 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Link } from 'react-scroll';
-import { FaNetworkWired, FaLaptopCode, FaHandsHelping, FaTimes } from 'react-icons/fa';
+import { ArrowRight, Wifi, Cloud, Shield } from 'lucide-react';
 
 export default function Services() {
-  const [popupContent, setPopupContent] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const sections = document.querySelectorAll('#services .card');
-    sections.forEach((section, index) => {
-      section.style.opacity = '0';
-      section.style.transform = 'translateY(20px)';
-      setTimeout(() => {
-        section.style.transition = 'all 0.5s ease-in-out';
-        section.style.opacity = '1';
-        section.style.transform = 'translateY(0)';
-      }, index * 200);
-    });
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const element = document.getElementById('services');
+    if (element) observer.observe(element);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
   }, []);
-
-  const openPopup = (content) => {
-    setPopupContent(content);
-  };
-
-  const closePopup = () => {
-    setPopupContent(null);
-  };
 
   const servicesData = [
     {
-      icon: <FaNetworkWired className="text-5xl text-primary" />,
-      title: 'Instant App Access',
-      shortDesc: 'Connect to Wi-Fi and get instantly redirected to the app that matters. No setup, no delay',
-      longDesc: 'With Instant App Access, every device that connects to the router is automatically routed to the correct web application. Customers see digital menus. Staff get access to dashboards. Students enter learning platforms all without typing links or asking for help. It’s seamless, smart, and built for real-world efficiency.',
+      icon: Wifi,
+      title: 'Smart Wi-Fi for Business',
+      description: 'Turn Wi-Fi into a promotional tool! Every connected customer sees a custom page for ordering food, drinks, or services.',
     },
     {
-      icon: <FaLaptopCode className="text-5xl text-primary" />,
-      title: 'Built-in Web System',
-      shortDesc: 'Your essential tools run directly from the router. Even when offline.',
-      longDesc: 'The router is powered by a Linux-based system with embedded hardware like Banana Pi. Applications like ordering systems, dashboards, or learning platforms are hosted locally inside the router, so they’re always accessible. No internet? No problem. Your operations continue without interruption.',
+      icon: Shield,
+      title: 'Guaranteed Security',
+      description: 'Customer networks are isolated from your business systems, protected with strong encryption for data security and compliance.',
     },
     {
-      icon: <FaHandsHelping className="text-5xl text-primary" />,
-      title: 'Industry-Ready Deployment ',
-      shortDesc: 'Preconfigured to support restaurants, schools, offices, and more.',
-      longDesc: 'Designed for plug-and-play simplicity, this router adapts to your business instantly. Whether it’s a café with digital ordering, a school with an e-learning portal, or an office with internal tools — everything is set up and ready to run. Just power it on and watch your space go smart.',
+      icon: Cloud,
+      title: 'On-Premise Cloud System',
+      description: 'Run applications directly from our device without external internet. The system is fast, reliable, and works offline.',
     },
   ];
 
   return (
-    <section id="services" className="py-16 bg-gradient-to-b from-[#f9fafb] to-white relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-2 h-full bg-[#0D89CA] opacity-20"></div>
-      <div className="absolute top-0 right-0 w-2 h-full bg-[#0D89CA] opacity-20"></div>
-
-      <div className="container mx-auto px-6 relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-10 tracking-tight">
-          Our Product
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {servicesData.map((service, index) => (
-            <div
-              key={index}
-              className="card bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
-            >
-              <div className="flex justify-center mb-6">{service.icon}</div>
-              <h3 className="text-2xl font-semibold text-primary mb-4 text-center">{service.title}</h3>
-              <p className="text-gray-600 text-base leading-relaxed mb-6 text-center">{service.shortDesc}</p>
-              <button
-                onClick={() => openPopup(service)}
-                className="mx-auto block px-6 py-2 text-primary font-medium rounded-full border border-primary hover:bg-primary hover:text-white transition-colors duration-200"
-              >
-                More
-              </button>
+    <section
+      id="services"
+      className={`min-h-screen bg-white py-12 md:py-16 px-4 sm:px-6 lg:px-8 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+    >
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+          {/* Left Content */}
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <div className="inline-block px-4 py-2 bg-cyan-50 rounded-full">
+                <span className="text-sm font-semibold text-cyan-600 tracking-wide uppercase">Our Services</span>
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-[1.1] tracking-tight">
+                Digital Transformation
+                <span className="block mt-2 bg-gradient-to-r from-cyan-500 to-[#46B1CF] bg-clip-text text-transparent">
+                  Starts Here
+                </span>
+              </h1>
+              <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-lg font-light">
+                Smart Wi-Fi solutions that turn every connection into a business opportunity. Boost customer engagement and optimize operations with cutting-edge cloud technology.
+              </p>
             </div>
-          ))}
-        </div>
-        <div className="text-center mt-10">
-          <Link
-            to="contact"
-            smooth={true}
-            duration={500}
-            className="inline-block px-10 py-4 bg-primary text-white text-lg font-semibold rounded-full hover:bg-opacity-90 transition-all"
-          >
-            Explore More
-          </Link>
-        </div>
-      </div>
+          </div>
 
-      {popupContent && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[999999]">
-          <div className="bg-white p-8 rounded-2xl shadow-xl max-w-lg w-full mx-4 relative">
-            <button
-              onClick={closePopup}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-            >
-              <FaTimes className="text-xl" />
-            </button>
-            <div className="flex justify-center mb-6">{popupContent.icon}</div>
-            <h3 className="text-2xl font-semibold text-primary mb-4 text-center">{popupContent.title}</h3>
-            <p className="text-gray-600 text-base leading-relaxed text-center">{popupContent.longDesc}</p>
-            <button
-              onClick={closePopup}
-              className="mt-6 mx-auto block px-6 py-2 text-primary font-medium rounded-full border border-primary hover:bg-primary hover:text-white transition-colors duration-200"
-            >
-              Close
-            </button>
+          {/* Right Content - Services Cards */}
+          <div className="space-y-4 scale-95 mt-8 lg:mt-8 lg:ml-16">
+            {servicesData.map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <div
+                  key={index}
+                  className="group bg-white border-2 border-gray-100 rounded-2xl p-3 md:p-4 hover:border-cyan-400 hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+                >
+                  <div className="flex items-start gap-4">
+                    {/* Icon */}
+                    <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-cyan-400 to-[#46B1CF] rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/25 group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent className="w-5 h-5 text-white" />
+                    </div>
+                    {/* Content */}
+                    <div className="flex-1 space-y-1">
+                      <h3 className="text-base md:text-lg font-bold text-gray-900 group-hover:text-cyan-600 transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                      <p className="text-xs md:text-sm text-gray-600 leading-relaxed font-light">
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
-      )}
+      </div>
     </section>
   );
 }
