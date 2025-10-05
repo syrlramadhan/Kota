@@ -43,6 +43,7 @@ footer {
 html {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
+  scroll-behavior: smooth; /* Add smooth scrolling */
 }
 
 /* Navbar styles */

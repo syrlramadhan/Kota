@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 
 export default function ModernHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const pathname = usePathname();
 
   const navLinks = [
@@ -49,32 +50,82 @@ export default function ModernHeader() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isActive = (href) => pathname === href;
+  useEffect(() => {
+    if (pathname !== '/') return;
+
+    const sections = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.id;
+            if (sectionId === 'home') {
+              setActiveSection('home');
+            } else if (sectionId === 'services') {
+              setActiveSection('services');
+            } else if (sectionId === 'contact') {
+              setActiveSection('contact');
+            }
+          }
+        });
+      },
+      { 
+        threshold: 0.3,
+        rootMargin: '-100px 0px -100px 0px'
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, [pathname]);
+
+  const isActive = (href) => {
+    if (pathname !== '/') {
+      // If not on home page, only match exact pathname
+      return pathname === href;
+    }
+    
+    // On home page, check active section
+    if (href === '/') {
+      return activeSection === 'home';
+    }
+    if (href === '/#services') {
+      return activeSection === 'services';
+    }
+    if (href === '/#contact') {
+      return activeSection === 'contact';
+    }
+    
+    return false;
+  };
 
   return (
     <>
       {/* Desktop Header - Ultra Modern */}
-      <header className="hidden lg:block fixed top-0 left-0 w-full z-50 transition-all duration-500">
+      <header className="hidden lg:block fixed top-0 left-0 w-full z-50 transition-all duration-300">
         {/* Floating Navigation Container */}
-        <div className="container mx-auto px-6 py-4">
-          <div className={`relative rounded-2xl shadow-xl border border-gray-200 transition-all duration-500 ${
-            isScrolled ? 'bg-white/50 backdrop-blur-lg shadow-2xl shadow-black/10' : 'bg-white shadow-lg'
+        <div className="container mx-auto px-6 lg:px-10 py-4">
+          <div className={`relative rounded-lg shadow-xl border border-gray-200 transition-all duration-300 ${
+            isScrolled ? 'bg-white/70 backdrop-blur-md border-gray-300' : 'bg-white shadow-lg'
           }`}>
             {/* Navigation Content */}
-            <div className="relative flex items-center justify-between px-8 py-4">
+            <div className="relative flex items-center justify-between px-3 py-2">
               {/* Logo Section - Enhanced */}
               <div className="flex-shrink-0">
-                <NextLink href="/" className="group flex items-center gap-4 hover:scale-105 transition-all duration-300">
+                <NextLink href="/" className="group flex items-center gap-4 transition-all duration-300">
                   <div className="relative">
                     {/* Glowing Ring Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#46B1CF] to-[#E80035] rounded-full blur-sm opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
-                    <div className="relative bg-white p-3 rounded-full shadow-lg group-hover:shadow-xl transition-all duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#46B1CF] to-[#E80035] rounded-lg blur-sm opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                    <div className="relative bg-white p-1 rounded-lg shadow-lg group-hover:shadow-xl transition-all duration-300 w-10 h-10 flex items-center justify-center">
                       <Image
                         src="/logofix.png"
                         alt="Kota Cloud Logo"
-                        width={40}
-                        height={40}
-                        className="relative z-10 group-hover:scale-110 transition-transform duration-300"
+                        width={34}
+                        height={34}
+                        className="relative z-10 transition-transform duration-300"
                       />
                     </div>
                   </div>
@@ -82,7 +133,7 @@ export default function ModernHeader() {
                     <span className="text-2xl font-black bg-gradient-to-r from-[#46B1CF] to-[#E80035] bg-clip-text text-transparent leading-tight">
                       Kota Cloud
                     </span>
-                    <span className="text-sm font-medium text-gray-500 group-hover:text-[#46B1CF] transition-colors duration-300">
+                    <span className="text-xs font-medium text-gray-500 group-hover:text-[#46B1CF] transition-colors duration-300">
                       Digital Innovation Hub
                     </span>
                   </div>
@@ -94,19 +145,14 @@ export default function ModernHeader() {
                 {navLinks.map((link, index) => (
                   <div key={link.href} className="relative group">
                     {/* Hover Background Effect */}
-                    <div className={`absolute inset-0 bg-[${link.color}] opacity-0 group-hover:opacity-10 rounded-xl transition-all duration-300 blur-sm`}></div>
-                    
+                    <div className="absolute inset-0 bg-[#46B1CF] opacity-0 group-hover:opacity-10 rounded-xl transition-all duration-300 blur-sm"></div>
                     <NextLink
                       href={link.href}
-                      className={`relative flex items-center gap-3 px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
+                      className={`relative flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold transition-all duration-300 ${
                         isActive(link.href)
-                          ? `text-white bg-[${link.color}] shadow-lg shadow-[#46B1CF]/25 transform scale-105`
-                          : 'text-gray-700 hover:text-gray-700 hover:bg-[#46B1CF]/80 hover:shadow-lg'
+                          ? 'text-white bg-[#46B1CF] shadow-lg shadow-[#46B1CF]/25 transform scale-105'
+                          : 'text-gray-700 hover:text-white hover:bg-[#46B1CF] hover:shadow-lg'
                       }`}
-                      style={{ 
-                        animationDelay: `${index * 100}ms`,
-                        animation: isScrolled ? `slideInDown 0.5s ease-out` : 'none'
-                      }}
                     >
                       <div className="relative">
                         <svg className="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,17 +181,17 @@ export default function ModernHeader() {
       <header className="lg:hidden fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
         <div className="relative group">
           {/* Glowing Effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#46B1CF] to-[#E80035] rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-all duration-500 animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#46B1CF] to-[#E80035] rounded-lg blur-lg opacity-30 group-hover:opacity-50 transition-all duration-500 animate-pulse"></div>
           
           {/* Logo Container */}
-          <div className="relative bg-white/95 backdrop-blur-2xl rounded-full p-4 shadow-2xl border border-white/30 group-hover:scale-110 transition-all duration-300">
+          <div className="relative bg-white/95 backdrop-blur-2xl rounded-lg shadow-2xl border border-white/30 transition-all duration-300 p-3 inline-block">
             <NextLink href="/">
               <Image
-                src="/foto1.png"
+                src="/logofix.png"
                 alt="Kota Cloud Logo"
-                width={45}
-                height={45}
-                className="transition-transform duration-300 group-hover:rotate-12"
+                width={44}
+                height={44}
+                className="transition-transform duration-300 block"
               />
             </NextLink>
           </div>
@@ -156,34 +202,30 @@ export default function ModernHeader() {
       <nav className="lg:hidden fixed bottom-4 left-4 right-4 z-50">
         <div className="relative">
           {/* Background Glow */}
-          <div className="absolute inset-0 bg-[#46B1CF]/20 rounded-2xl blur-lg"></div>
+          <div className="absolute inset-0 bg-[#46B1CF]/20 rounded-lg blur-lg"></div>
           
           {/* Navigation Container */}
-          <div className="relative bg-white/10 backdrop-blur-2xl rounded-2xl border border-white/20 shadow-2xl p-2">
+          <div className="relative bg-white/10 backdrop-blur-2xl rounded-lg border border-white/20 shadow-2xl p-2">
             <div className="flex items-center justify-around">
               {navLinks.map((link, index) => (
-                <div key={link.href} className="relative group flex-1 max-w-20">
+                <div key={link.href} className="relative group flex-1 max-w-14">
                   {/* Active Background */}
                   {isActive(link.href) && (
-                    <div className={`absolute inset-0 bg-[${link.color}] rounded-xl opacity-90 shadow-lg`}></div>
+                    <div className="absolute inset-0 bg-[#46B1CF] rounded-xl opacity-90 shadow-lg"></div>
                   )}
                   
                   <NextLink
                     href={link.href}
-                    className={`relative flex flex-col items-center justify-center px-3 py-4 rounded-xl transition-all duration-300 group-hover:scale-110 ${
+                    className={`relative flex flex-col items-center justify-center px-3 py-2 rounded-xl transition-all duration-300 group-hover:scale-110 ${
                       isActive(link.href)
                         ? 'text-white transform scale-105'
-                        : 'text-gray-600 hover:text-gray-700 hover:bg-[#46B1CF]/80'
+                        : 'text-gray-600 hover:text-white hover:bg-[#46B1CF]'
                     }`}
-                    style={{
-                      animationDelay: `${index * 50}ms`,
-                      animation: 'slideInUp 0.5s ease-out'
-                    }}
                   >
                     <div className="relative mb-1">
                       <svg 
-                        className={`h-6 w-6 transition-all duration-300 ${
-                          isActive(link.href) ? 'animate-bounce' : 'group-hover:rotate-12'
+                        className={`h-5 w-5 transition-all duration-300 ${
+                          isActive(link.href) ? '' : 'group-hover:rotate-12'
                         }`} 
                         fill="none" 
                         stroke="currentColor" 
@@ -197,7 +239,7 @@ export default function ModernHeader() {
                       )}
                     </div>
                     
-                    <span className={`text-xs font-bold truncate transition-all duration-300 ${
+                    <span className={`text-[10px] font-bold truncate transition-all duration-300 ${
                       isActive(link.href) ? 'text-white' : 'text-gray-700'
                     }`}>
                       {link.shortLabel}
@@ -214,32 +256,10 @@ export default function ModernHeader() {
       </nav>
 
       {/* Spacer untuk mobile */}
-      <div className="lg:hidden h-24"></div>
+      <div className="lg:hidden h-20"></div>
 
       {/* CSS Animations */}
-      <style jsx>{`
-        @keyframes slideInDown {
-          from {
-            transform: translateY(-30px);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-        
-        @keyframes slideInUp {
-          from {
-            transform: translateY(30px);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-        
+      <style jsx>{`        
         .animate-float {
           animation: float 6s ease-in-out infinite;
         }
