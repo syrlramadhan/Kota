@@ -58,14 +58,14 @@ export default function BrandSection() {
               borderColor: '#46B1CF'
             }}
           >
-            <Zap className="w-5 h-5" style={{ color: '#46B1CF' }} />
-            <span className="font-bold text-sm tracking-wide" style={{ color: '#46B1CF' }}>
-              PLATFORM INOVATIF UNTUK BISNIS MASA DEPAN
+            <Zap className="w-4 h-4" style={{ color: '#46B1CF' }} />
+            <span className="font-semibold text-xs tracking-wide" style={{ color: '#46B1CF' }}>
+              Platform Inovatif untuk Bisnis Masa Depan
             </span>
           </div>
 
           {/* Brand Title */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
             <span className="text-gray-900">Kota Cloud:</span>
             <br />
             <span className="bg-gradient-to-r from-[#46B1CF] to-[#3a8fa8] bg-clip-text text-transparent">
@@ -74,7 +74,7 @@ export default function BrandSection() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-600 font-semibold max-w-4xl mx-auto mb-8">
+          <p className="text-base sm:text-lg text-gray-600 font-normal max-w-4xl mx-auto mb-8">
             Memberdayakan Bisnis dengan Konektivitas Cerdas dan Solusi Cloud Terintegrasi
           </p>
 
@@ -94,12 +94,12 @@ export default function BrandSection() {
           className="max-w-5xl mx-auto mb-20"
         >
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-gray-100">
-            <div className="space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed">
+            <div className="space-y-6 text-base sm:text-lg text-gray-700 leading-relaxed">
               <p className="text-justify">
-                <strong className="font-extrabold text-gray-900">Kota Cloud</strong> adalah platform perintis yang mengubah cara bisnis terhubung dengan pelanggan. Dengan mengintegrasikan jaringan canggih dan cloud computing, kami menciptakan ekosistem digital yang seamless—seperti kota pintar di era digital. Solusi kami menggabungkan <span className="font-bold" style={{ color: '#46B1CF' }}>sistem pemesanan intuitif</span> dengan <span className="font-bold" style={{ color: '#E80035' }}>alat Wi-Fi marketing yang powerful</span>, memungkinkan bisnis mendorong revenue langsung dan pertumbuhan jangka panjang melalui insights berbasis data.
+                <strong className="font-medium text-gray-900">Kota Cloud</strong> adalah platform perintis yang mengubah cara bisnis terhubung dengan pelanggan. Dengan mengintegrasikan jaringan canggih dan cloud computing, kami menciptakan ekosistem digital yang seamless—seperti kota pintar di era digital. Solusi kami menggabungkan <span className="font-normal" style={{ color: '#46B1CF' }}>sistem pemesanan intuitif</span> dengan <span className="font-normal" style={{ color: '#E80035' }}>alat Wi-Fi marketing yang powerful</span>, memungkinkan bisnis mendorong revenue langsung dan pertumbuhan jangka panjang melalui insights berbasis data.
               </p>
               <p className="text-justify">
-                Visi kami adalah memimpin secara global dalam solusi jaringan dan cloud terintegrasi, memberdayakan bisnis di Indonesia dan seluruh dunia dengan teknologi inovatif dan berkelanjutan. Dari hospitality hingga healthcare, retail hingga sektor publik, Kota Cloud menghadirkan solusi yang <span className="font-bold text-gray-900">aman, scalable, dan user-friendly</span> yang mendefinisikan ulang efisiensi operasional dan customer engagement.
+                Visi kami adalah memimpin secara global dalam solusi jaringan dan cloud terintegrasi, memberdayakan bisnis di Indonesia dan seluruh dunia dengan teknologi inovatif dan berkelanjutan. Dari hospitality hingga healthcare, retail hingga sektor publik, Kota Cloud menghadirkan solusi yang <span className="font-normal text-gray-900">aman, scalable, dan user-friendly</span> yang mendefinisikan ulang efisiensi operasional dan customer engagement.
               </p>
             </div>
           </div>
@@ -113,10 +113,10 @@ export default function BrandSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
               Keunggulan Platform Kami
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
               Empat pilar utama yang menjadikan Kota Cloud solusi terdepan untuk transformasi digital bisnis Anda
             </p>
           </motion.div>
@@ -135,10 +135,10 @@ export default function BrandSection() {
                 >
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-extrabold text-gray-900 mb-3">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-sm text-gray-600 leading-relaxed">
                   {feature.description}
                 </p>
               </motion.div>
@@ -158,18 +158,18 @@ export default function BrandSection() {
               to="contact"
               smooth={true}
               duration={500}
-              className="inline-flex items-center justify-center px-10 py-5 text-white font-bold text-lg rounded-xl shadow-2xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 cursor-pointer group"
+              className="inline-flex items-center justify-center px-6 py-3 text-white font-normal text-sm rounded-full shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer group"
               style={{ background: 'linear-gradient(135deg, #46B1CF, #3a8fa8)' }}
             >
               <span>Hubungi Kami Sekarang</span>
-              <ArrowRight className="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
             
             <Link
               to="about"
               smooth={true}
               duration={500}
-              className="inline-flex items-center justify-center px-10 py-5 bg-white font-bold text-lg rounded-xl border-2 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer"
+              className="inline-flex items-center justify-center px-6 py-3 bg-white font-normal text-sm rounded-full border shadow-sm hover:shadow-md transform hover:scale-105 transition-all duration-300 cursor-pointer"
               style={{ borderColor: '#46B1CF', color: '#46B1CF' }}
             >
               Pelajari Lebih Lanjut

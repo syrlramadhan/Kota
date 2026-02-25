@@ -1,16 +1,20 @@
 // src/app/layout.js
-import './globals.css';
+'use client';
 
-export const metadata = {
-  title: 'Kota Cloud - Smart Network Solutions',
-  description: 'Platform jaringan dan komputasi awan yang komprehensif',
-}
+import './globals.css';
+import { ThemeProvider } from 'next-themes';
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <title>Kota Cloud - Smart Network Solutions</title>
+        <meta name="description" content="Platform jaringan dan komputasi awan yang komprehensif" />
+      </head>
       <body className="antialiased">
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

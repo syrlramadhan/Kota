@@ -90,18 +90,18 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <h3 className="text-3xl font-black mb-2 bg-gradient-to-r from-white via-blue-200 to-[#0D89CA] bg-clip-text text-transparent">
+              <h3 className="text-3xl font-extrabold mb-2 bg-gradient-to-r from-white via-blue-200 to-[#0D89CA] bg-clip-text text-transparent">
                 Kota Cloud
               </h3>
               <p className="text-sm text-white leading-relaxed font-light">
                 Revolusi digital dimulai dari sini.{' '}
-                <span className="block mt-1 text-[#0D89CA] font-medium">
+                <span className="block mt-1 text-[#0D89CA] font-normal">
                   Ekosistem teknologi masa depan.
                 </span>
               </p>
             </div>
             <div className="space-y-2">
-              <h4 className="text-xs font-bold text-[#0D89CA] uppercase tracking-[0.15em]">
+              <h4 className="text-xs font-normal text-[#0D89CA] uppercase tracking-[0.15em]">
                 Connect With Future
               </h4>
               <div className="flex space-x-2">
@@ -123,7 +123,7 @@ export default function Footer() {
                       </div>
                     </div>
                     <span
-                      className={`absolute -bottom-5 left-1/2 transform -translate-x-1/2 text-[10px] font-medium text-[#0D89CA] transition-all duration-300 ${
+                      className={`absolute -bottom-5 left-1/2 transform -translate-x-1/2 text-[10px] font-normal text-[#0D89CA] transition-all duration-300 ${
                         hoveredSocial === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                       }`}
                     >
@@ -139,7 +139,7 @@ export default function Footer() {
           <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Quick Navigation */}
             <div>
-              <h4 className="text-lg font-bold mb-3 text-white">Quick Access</h4>
+              <h4 className="text-lg font-normal mb-3 text-white">Quick Access</h4>
               <ul className="space-y-2">
                 {quickLinks.map((link, index) => (
                   <li key={index} className="group">
@@ -150,7 +150,7 @@ export default function Footer() {
                       className="flex items-center space-x-2 text-white hover:text-[#0D89CA] cursor-pointer transition-all duration-300 group-hover:translate-x-2"
                     >
                       <div className="w-1.5 h-1.5 bg-[#0D89CA] rounded-full group-hover:w-3 transition-all duration-300"></div>
-                      <span className="text-sm font-medium">{link.label}</span>
+                      <span className="text-sm font-normal">{link.label}</span>
                       <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all duration-300" />
                     </Link>
                   </li>
@@ -160,7 +160,7 @@ export default function Footer() {
 
             {/* Contact Info */}
             <div>
-              <h4 className="text-lg font-bold mb-3 text-white">Let's Talk</h4>
+              <h4 className="text-lg font-normal mb-3 text-white">Let's Talk</h4>
               <div className="space-y-3">
                 <div className="group cursor-pointer">
                   <div className="flex items-start space-x-2 p-2 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-[#0D89CA]/50 hover:bg-[#0D89CA]/10 transition-all duration-300">
@@ -168,8 +168,8 @@ export default function Footer() {
                       <Mail className="w-4 h-4 text-[#0D89CA] group-hover:text-white" />
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold text-[#0D89CA] uppercase tracking-wider mb-1">Email</p>
-                      <p className="text-sm text-white font-medium">admin@kotacloud.com</p>
+                      <p className="text-[10px] font-normal text-[#0D89CA] uppercase tracking-wider mb-1">Email</p>
+                      <p className="text-sm text-white font-normal">admin@kotacloud.com</p>
                     </div>
                   </div>
                 </div>
@@ -179,8 +179,8 @@ export default function Footer() {
                       <Phone className="w-4 h-4 text-[#0D89CA] group-hover:text-white" />
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold text-[#0D89CA] uppercase tracking-wider mb-1">Call</p>
-                      <p className="text-sm text-white font-medium">+62 812-8871-9249</p>
+                      <p className="text-[10px] font-normal text-[#0D89CA] uppercase tracking-wider mb-1">Call</p>
+                      <p className="text-sm text-white font-normal">+62 812-8871-9249</p>
                     </div>
                   </div>
                 </div>
@@ -190,8 +190,8 @@ export default function Footer() {
                       <MapPin className="w-4 h-4 text-[#0D89CA] group-hover:text-white" />
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold text-[#0D89CA] uppercase tracking-wider mb-1">Location</p>
-                      <p className="text-sm text-white font-medium leading-relaxed">
+                      <p className="text-[10px] font-normal text-[#0D89CA] uppercase tracking-wider mb-1">Location</p>
+                      <p className="text-sm text-white font-normal leading-relaxed">
                         Jl. Mon. Emmy Saelan III<br />
                         Makassar, Indonesia
                       </p>
@@ -208,8 +208,8 @@ export default function Footer() {
       <div className="border-t border-white/10 bg-black/50 backdrop-blur-sm">
         <div className="container mx-auto px-6 py-3">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0">
-            <div className="text-white text-xs font-medium">
-              © 2025 Kota Cloud. Building tomorrow's infrastructure.
+            <div className="text-white text-xs font-normal">
+              Copyright © 2025 - 2026 PT. Kota Cloud Indonesia All Rights Reserved.
             </div>
             <div className="flex items-center space-x-4 text-xs">
               <a href="#" className="text-white hover:text-[#0D89CA] transition-colors duration-200 flex items-center space-x-1">
@@ -220,11 +220,11 @@ export default function Footer() {
                 <span>Terms</span>
                 <ExternalLink className="w-2.5 h-2.5" />
               </a>
-              <div className="flex items-center space-x-1 text-white">
+              {/* <div className="flex items-center space-x-1 text-white">
                 <span>Crafted in</span>
                 <span className="text-red-500 animate-pulse">🇮🇩</span>
                 <span>Indonesia</span>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

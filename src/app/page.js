@@ -101,7 +101,7 @@ export default function Home() {
       {/* Main Content */}
       <main className="relative">
         {/* Spacer untuk desktop header */}
-        <div className="hidden lg:block h-16"></div>
+        {/* <div className="hidden lg:block h-16"></div> */}
         
         <Hero typingRef={typingRef} />
         <About /> 

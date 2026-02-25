@@ -32,18 +32,17 @@ export default function Team() {
             }}
           >
             <Users className="w-5 h-5" style={{ color: '#46B1CF' }} />
-            <span className="font-bold text-sm tracking-wide" style={{ color: '#46B1CF' }}>OUR LEADERSHIP TEAM</span>
-            <Award className="w-5 h-5" style={{ color: '#E80035' }} />
+            <span className="font-semibold text-sm tracking-wide" style={{ color: '#46B1CF' }}>Tim Kepemimpinan Kami</span>
           </div>
 
           {/* Title */}
-          <h2 className="text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tight mb-4">
-            Meet Our Team
+          <h2 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4">
+            Kenali Tim Kami
           </h2>
           
           {/* Subtitle with Enhanced Typography */}
-          <p className="text-gray-600 text-lg md:text-xl mt-4 max-w-3xl mx-auto leading-relaxed font-medium">
-            The innovators behind Kota Cloud, driving the future of <span className="font-bold" style={{ color: '#46B1CF' }}>connectivity</span> and <span className="font-bold" style={{ color: '#E80035' }}>cloud innovation</span>.
+          <p className="text-gray-600 text-lg md:text-xl mt-4 max-w-3xl mx-auto leading-relaxed font-normal">
+            Para inovator di balik Kota Cloud, mendorong masa depan <span className="font-normal" style={{ color: '#46B1CF' }}>konektivitas</span> dan <span className="font-normal" style={{ color: '#E80035' }}>inovasi cloud</span>.
           </p>
           
           {/* Enhanced Decorative Line */}
@@ -67,8 +66,8 @@ export default function Team() {
               <div className="team-overlay absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent rounded-b-2xl"></div>
             </div>
             <div className="absolute bottom-0 left-0 w-full p-4 text-white">
-              <h3 className="text-lg font-semibold mb-1">Nur Hidayat</h3>
-              <p className="text-xs mb-2">Commissioner</p>
+              <h3 className="text-lg font-normal mb-1">Nur Hidayat</h3>
+              <p className="text-xs mb-2">Komisaris</p>
               <a href="https://www.linkedin.com/in/xiners?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="team-linkedin inline-block">
                 <svg className="w-5 h-5 text-white hover:text-[#46B1CF] transition-transform hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.478-2.246-1.677-2.246-.916 0-1.462.614-1.702 1.207-.087.214-.109.514-.109.814v5.829h-3s.038-9.462 0-10.443h3v1.479c.398-.614 1.109-1.489 2.697-1.489 1.969 0 3.447 1.286 3.447 4.047v6.406z" />
@@ -88,8 +87,8 @@ export default function Team() {
               <div className="team-overlay absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent rounded-b-2xl"></div>
             </div>
             <div className="absolute bottom-0 left-0 w-full p-4 text-white">
-              <h3 className="text-lg font-semibold mb-1">Syahrul Ramadhan</h3>
-              <p className="text-xs mb-2">Chief Executive Officer</p>
+              <h3 className="text-lg font-normal mb-1">Syahrul Ramadhan</h3>
+              <p className="text-xs mb-2">Direktur Utama</p>
               <a href="#" className="team-linkedin inline-block">
                 <svg className="w-5 h-5 text-white hover:text-[#46B1CF] transition-transform hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.478-2.246-1.677-2.246-.916 0-1.462.614-1.702 1.207-.087.214-.109.514-.109.814v5.829h-3s.038-9.462 0-10.443h3v1.479c.398-.614 1.109-1.489 2.697-1.489 1.969 0 3.447 1.286 3.447 4.047v6.406z" />
@@ -109,8 +108,8 @@ export default function Team() {
               <div className="team-overlay absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent rounded-b-2xl"></div>
             </div>
             <div className="absolute bottom-0 left-0 w-full p-4 text-white">
-              <h3 className="text-lg font-semibold mb-1">Musdalipa</h3>
-              <p className="text-xs mb-2">Chief Financial Officer</p>
+              <h3 className="text-lg font-normal mb-1">Musdalipa</h3>
+              <p className="text-xs mb-2">Direktur Keuangan</p>
               <a href="https://www.linkedin.com/in/musdalipa-said-729997343?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="team-linkedin inline-block">
                 <svg className="w-5 h-5 text-white hover:text-[#46B1CF] transition-transform hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.478-2.246-1.677-2.246-.916 0-1.462.614-1.702 1.207-.087.214-.109.514-.109.814v5.829h-3s.038-9.462 0-10.443h3v1.479c.398-.614 1.109-1.489 2.697-1.489 1.969 0 3.447 1.286 3.447 4.047v6.406z" />
@@ -130,8 +129,8 @@ export default function Team() {
               <div className="team-overlay absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent rounded-b-2xl"></div>
             </div>
             <div className="absolute bottom-0 left-0 w-full p-4 text-white">
-              <h3 className="text-lg font-semibold mb-1">Yusuf Marcelino Ishak</h3>
-              <p className="text-xs mb-2">Chief Operating Officer</p>
+              <h3 className="text-lg font-normal mb-1">Yusuf Marcelino Ishak</h3>
+              <p className="text-xs mb-2">Direktur Operasional</p>
               <a href="https://www.linkedin.com/in/yusuf-marcelino-9b5725304/" className="team-linkedin inline-block">
                 <svg className="w-5 h-5 text-white hover:text-[#46B1CF] transition-transform hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.478-2.246-1.677-2.246-.916 0-1.462.614-1.702 1.207-.087.214-.109.514-.109.814v5.829h-3s.038-9.462 0-10.443h3v1.479c.398-.614 1.109-1.489 2.697-1.489 1.969 0 3.447 1.286 3.447 4.047v6.406z" />
@@ -151,8 +150,8 @@ export default function Team() {
               <div className="team-overlay absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent rounded-b-2xl"></div>
             </div>
             <div className="absolute bottom-0 left-0 w-full p-4 text-white">
-              <h3 className="text-lg font-semibold mb-1">Muh. Hasrul</h3>
-              <p className="text-xs mb-2">Chief Development Officer</p>
+              <h3 className="text-lg font-normal mb-1">Muh. Hasrul</h3>
+              <p className="text-xs mb-2">Direktur Pengembangan</p>
               <a href="https://www.linkedin.com/in/muh-hasrul-7aa586292" className="team-linkedin inline-block">
                 <svg className="w-5 h-5 text-white hover:text-[#46B1CF] transition-transform hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.478-2.246-1.677-2.246-.916 0-1.462.614-1.702 1.207-.087.214-.109.514-.109.814v5.829h-3s.038-9.462 0-10.443h3v1.479c.398-.614 1.109-1.489 2.697-1.489 1.969 0 3.447 1.286 3.447 4.047v6.406z" />
@@ -172,8 +171,8 @@ export default function Team() {
               <div className="team-overlay absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent rounded-b-2xl"></div>
             </div>
             <div className="absolute bottom-0 left-0 w-full p-4 text-white">
-              <h3 className="text-lg font-semibold mb-1">Amelia</h3>
-              <p className="text-xs mb-2">Chief Marketing Officer</p>
+              <h3 className="text-lg font-normal mb-1">Amelia</h3>
+              <p className="text-xs mb-2">Direktur Pemasaran</p>
               <a href="#" className="team-linkedin inline-block">
                 <svg className="w-5 h-5 text-white hover:text-[#46B1CF] transition-transform hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.478-2.246-1.677-2.246-.916 0-1.462.614-1.702 1.207-.087.214-.109.514-.109.814v5.829h-3s.038-9.462 0-10.443h3v1.479c.398-.614 1.109-1.489 2.697-1.489 1.969 0 3.447 1.286 3.447 4.047v6.406z" />
@@ -193,8 +192,8 @@ export default function Team() {
               <div className="team-overlay absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent rounded-b-2xl"></div>
             </div>
             <div className="absolute bottom-0 left-0 w-full p-4 text-white">
-              <h3 className="text-lg font-semibold mb-1">Muhammad Aksan</h3>
-              <p className="text-xs mb-2">Chief Technology Officer</p>
+              <h3 className="text-lg font-normal mb-1">Muhammad Aksan</h3>
+              <p className="text-xs mb-2">Direktur Teknologi</p>
               <a href="https://www.linkedin.com/in/muhammad-aksan-78a0b5317" className="team-linkedin inline-block">
                 <svg className="w-5 h-5 text-white hover:text-[#46B1CF] transition-transform hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.478-2.246-1.677-2.246-.916 0-1.462.614-1.702 1.207-.087.214-.109.514-.109.814v5.829h-3s.038-9.462 0-10.443h3v1.479c.398-.614 1.109-1.489 2.697-1.489 1.969 0 3.447 1.286 3.447 4.047v6.406z" />
@@ -214,8 +213,8 @@ export default function Team() {
               <div className="team-overlay absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent rounded-b-2xl"></div>
             </div>
             <div className="absolute bottom-0 left-0 w-full p-4 text-white">
-              <h3 className="text-lg font-semibold mb-1">Mustika</h3>
-              <p className="text-xs mb-2">Chief Human Resource</p>
+              <h3 className="text-lg font-normal mb-1">Mustika</h3>
+              <p className="text-xs mb-2">Direktur SDM</p>
               <a href="#" className="team-linkedin inline-block">
                 <svg className="w-5 h-5 text-white hover:text-[#46B1CF] transition-transform hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.478-2.246-1.677-2.246-.916 0-1.462.614-1.702 1.207-.087.214-.109.514-.109.814v5.829h-3s.038-9.462 0-10.443h3v1.479c.398-.614 1.109-1.489 2.697-1.489 1.969 0 3.447 1.286 3.447 4.047v6.406z" />

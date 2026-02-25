@@ -1,7 +1,7 @@
 'use client';
 
+import { Mail, MapPin, MessageCircle, Phone, Send, User } from 'lucide-react';
 import { useRef, useState } from 'react';
-import { Mail, Phone, MapPin, Send, User, MessageCircle, Zap, Building2 } from 'lucide-react';
 
 export default function Contact({ formData, shakeFields, handleFormSubmit, handleInputChange }) {
   const formRef = useRef();
@@ -10,21 +10,16 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     if (!formData?.name || !formData?.email || !formData?.message) {
       if (handleFormSubmit) handleFormSubmit(e);
       return;
     }
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       alert('Please enter a valid email address.');
       return;
     }
-
     setLoading(true);
-
-    // Simulate email sending
     setTimeout(() => {
       alert('Message sent successfully!');
       if (handleInputChange) {
@@ -37,102 +32,60 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
   };
 
   const handleChange = (e) => {
-    if (handleInputChange) {
-      handleInputChange(e);
-    }
+    if (handleInputChange) handleInputChange(e);
   };
 
   return (
-    <section id="contact" className="relative py-24 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
-      {/* Enhanced Background Elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 20px 20px, #46B1CF 1.5px, transparent 0)`,
-            backgroundSize: '40px 40px',
-          }}
-        ></div>
-      </div>
+    <section id="contact" className="relative py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+      {/* Subtle grid background */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: 'radial-gradient(circle at 1px 1px, #0ea5e9 1px, transparent 0)',
+          backgroundSize: '26px 26px',
+        }}
+      />
 
-      {/* Floating Gradient Orbs */}
-      <div className="absolute top-20 right-10 w-64 h-64 rounded-full opacity-10 blur-3xl"
-        style={{ background: 'radial-gradient(circle, #46B1CF, transparent)' }}></div>
-      <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full opacity-10 blur-3xl"
-        style={{ background: 'radial-gradient(circle, #E80035, transparent)' }}></div>
-
-      <div className="container mx-auto px-6 relative z-10 max-w-7xl">
+      <div className="relative z-10 container mx-auto px-6 max-w-5xl">
         {/* Header */}
-        <div className="text-center mb-16">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full mb-6 border-2 shadow-lg"
-            style={{
-              background: 'linear-gradient(to right, #fff5f8, #e6f7fb)',
-              borderColor: '#46B1CF'
-            }}
-          >
-            <Mail className="w-5 h-5" style={{ color: '#46B1CF' }} />
-            <span className="font-bold text-sm tracking-wide" style={{ color: '#46B1CF' }}>GET IN TOUCH</span>
-            <Zap className="w-5 h-5" style={{ color: '#E80035' }} />
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-200 bg-white/70 backdrop-blur mb-4">
+            <Mail className="w-4 h-4 text-cyan-600" />
+            <span className="text-xs font-medium text-cyan-700">Hubungi Kami</span>
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3 leading-tight">
             Mari Berkolaborasi
           </h2>
-          
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium">
-            Siap mentransformasi bisnis Anda dengan teknologi Kota Cloud?
-            <span className="block mt-2 font-bold bg-gradient-to-r from-[#46B1CF] to-[#3a8fa8] bg-clip-text text-transparent">
-              Tim ahli kami menunggu untuk berdiskusi dengan Anda
-            </span>
+          <p className="text-sm sm:text-base text-gray-600 max-w-xl mx-auto">
+            Siap mentransformasi bisnis Anda dengan teknologi Kota Cloud?{' '}
+            <span className="text-cyan-600 font-medium">Tim ahli kami menunggu untuk berdiskusi dengan Anda.</span>
           </p>
-
-          {/* Decorative Line */}
-          <div className="flex items-center justify-center gap-2 mt-8">
-            <div className="w-20 h-1 rounded-full" style={{ background: '#46B1CF' }}></div>
-            <div className="w-3 h-3 rounded-full" style={{ background: '#E80035' }}></div>
-            <div className="w-20 h-1 rounded-full" style={{ background: '#E80035' }}></div>
-          </div>
         </div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
           {/* Contact Form */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-3xl p-8 shadow-2xl border-2 border-gray-100">
-              <div className="mb-8">
-                <h3 className="text-2xl font-extrabold text-gray-900 mb-3">
-                  Ceritakan Kebutuhan Anda
-                </h3>
-                <p className="text-base text-gray-600">
-                  Kami akan merespon dalam <span className="font-bold" style={{ color: '#46B1CF' }}>24 jam</span> dengan solusi terbaik
+            <div className="rounded-2xl border border-gray-100 bg-white/80 backdrop-blur shadow-sm p-6">
+              <div className="mb-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-1">Ceritakan Kebutuhan Anda</h3>
+                <p className="text-sm text-gray-600">
+                  Kami akan merespon dalam <span className="font-semibold text-cyan-600">24 jam</span> dengan solusi terbaik
                 </p>
               </div>
 
-              <div ref={formRef} className="space-y-6">
-                {/* Name Input */}
-                <div className="group">
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-bold text-gray-700 mb-3"
-                  >
-                    Nama Lengkap <span style={{ color: '#E80035' }}>*</span>
+              <div ref={formRef} className="space-y-5">
+                {/* Name */}
+                <div>
+                  <label htmlFor="name" className="block text-xs font-semibold text-gray-700 mb-2">
+                    Nama Lengkap <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
                     <input
                       type="text"
                       id="name"
                       name="name"
-                      className={`w-full px-5 py-4 text-base border-2 rounded-xl transition-all duration-300 bg-gray-50/50 
-                        ${
-                          focusedField === 'name'
-                            ? 'bg-white shadow-lg ring-4'
-                            : 'border-gray-200 hover:border-gray-300'
-                        }
-                        ${shakeFields?.name ? 'animate-pulse border-red-300' : ''}`}
-                      style={{
-                        borderColor: focusedField === 'name' ? '#46B1CF' : undefined,
-                        ringColor: focusedField === 'name' ? 'rgba(70, 177, 207, 0.1)' : undefined
-                      }}
+                      className={`w-full px-4 py-3 text-sm border rounded-xl bg-gray-50 transition focus:bg-white focus:ring-2 focus:ring-cyan-100 focus:border-cyan-500 ${shakeFields?.name ? 'border-red-300' : 'border-gray-200'}`}
                       placeholder="Masukkan nama lengkap Anda"
                       value={formData?.name || ''}
                       onChange={handleChange}
@@ -140,37 +93,21 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
                       onBlur={() => setFocusedField(null)}
                       required
                     />
-                    <User
-                      className={`absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 transition-colors duration-300`}
-                      style={{ color: focusedField === 'name' ? '#46B1CF' : '#9ca3af' }}
-                    />
+                    <User className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   </div>
                 </div>
 
-                {/* Email Input */}
-                <div className="group">
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-bold text-gray-700 mb-3"
-                  >
-                    Alamat Email <span style={{ color: '#E80035' }}>*</span>
+                {/* Email */}
+                <div>
+                  <label htmlFor="email" className="block text-xs font-semibold text-gray-700 mb-2">
+                    Alamat Email <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
                     <input
                       type="email"
                       id="email"
                       name="email"
-                      className={`w-full px-5 py-4 text-base border-2 rounded-xl transition-all duration-300 bg-gray-50/50
-                        ${
-                          focusedField === 'email'
-                            ? 'bg-white shadow-lg ring-4'
-                            : 'border-gray-200 hover:border-gray-300'
-                        }
-                        ${shakeFields?.email ? 'animate-pulse border-red-300' : ''}`}
-                      style={{
-                        borderColor: focusedField === 'email' ? '#46B1CF' : undefined,
-                        ringColor: focusedField === 'email' ? 'rgba(70, 177, 207, 0.1)' : undefined
-                      }}
+                      className={`w-full px-4 py-3 text-sm border rounded-xl bg-gray-50 transition focus:bg-white focus:ring-2 focus:ring-cyan-100 focus:border-cyan-500 ${shakeFields?.email ? 'border-red-300' : 'border-gray-200'}`}
                       placeholder="nama@perusahaan.com"
                       value={formData?.email || ''}
                       onChange={handleChange}
@@ -178,69 +115,47 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
                       onBlur={() => setFocusedField(null)}
                       required
                     />
-                    <Mail
-                      className={`absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 transition-colors duration-300`}
-                      style={{ color: focusedField === 'email' ? '#46B1CF' : '#9ca3af' }}
-                    />
+                    <Mail className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   </div>
                 </div>
 
-                {/* Message Input */}
-                <div className="group">
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-bold text-gray-700 mb-3"
-                  >
-                    Pesan Anda <span style={{ color: '#E80035' }}>*</span>
+                {/* Message */}
+                <div>
+                  <label htmlFor="message" className="block text-xs font-semibold text-gray-700 mb-2">
+                    Pesan Anda <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
                     <textarea
                       id="message"
                       name="message"
-                      rows="6"
-                      className={`w-full px-5 py-4 text-base border-2 rounded-xl transition-all duration-300 bg-gray-50/50 resize-none
-                        ${
-                          focusedField === 'message'
-                            ? 'bg-white shadow-lg ring-4'
-                            : 'border-gray-200 hover:border-gray-300'
-                        }
-                        ${shakeFields?.message ? 'animate-pulse border-red-300' : ''}`}
-                      style={{
-                        borderColor: focusedField === 'message' ? '#46B1CF' : undefined,
-                        ringColor: focusedField === 'message' ? 'rgba(70, 177, 207, 0.1)' : undefined
-                      }}
+                      rows="4"
+                      className={`w-full px-4 py-3 text-sm border rounded-xl bg-gray-50 resize-none transition focus:bg-white focus:ring-2 focus:ring-cyan-100 focus:border-cyan-500 ${shakeFields?.message ? 'border-red-300' : 'border-gray-200'}`}
                       placeholder="Ceritakan tentang bisnis Anda dan bagaimana Kota Cloud dapat membantu..."
                       value={formData?.message || ''}
                       onChange={handleChange}
                       onFocus={() => setFocusedField('message')}
                       onBlur={() => setFocusedField(null)}
                       required
-                    ></textarea>
-                    <MessageCircle
-                      className={`absolute right-4 top-4 w-5 h-5 transition-colors duration-300`}
-                      style={{ color: focusedField === 'message' ? '#46B1CF' : '#9ca3af' }}
                     />
+                    <MessageCircle className="absolute right-3 top-3 w-4 h-4 text-gray-400" />
                   </div>
                 </div>
 
-                {/* Submit Button */}
+                {/* Submit */}
                 <button
                   type="button"
                   onClick={sendEmail}
                   disabled={loading}
-                  className="w-full text-white text-base font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
-                  style={{ background: loading ? '#9ca3af' : 'linear-gradient(135deg, #46B1CF, #3a8fa8)' }}
-                  onMouseEnter={(e) => !loading && (e.currentTarget.style.background = 'linear-gradient(135deg, #3a8fa8, #2d92b3)')}
-                  onMouseLeave={(e) => !loading && (e.currentTarget.style.background = 'linear-gradient(135deg, #46B1CF, #3a8fa8)')}
+                  className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-cyan-600 text-white text-sm font-medium hover:bg-cyan-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
-                      <span>Mengirim Pesan...</span>
+                      <div className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full" />
+                      <span>Mengirim...</span>
                     </>
                   ) : (
                     <>
-                      <Send className="w-5 h-5" />
+                      <Send className="w-4 h-4" />
                       <span>Kirim Pesan Sekarang</span>
                     </>
                   )}
@@ -249,47 +164,40 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
             </div>
           </div>
 
-          {/* Contact Information */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* Contact Info Card */}
-            <div className="rounded-3xl p-8 text-white shadow-2xl"
-              style={{ background: 'linear-gradient(135deg, #46B1CF, #3a8fa8)' }}
-            >
-              <div className="flex items-center gap-2 mb-6">
-                <Building2 className="w-6 h-6" />
-                <h3 className="text-xl font-extrabold">Kontak Langsung</h3>
-              </div>
-              
-              <div className="space-y-5">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 flex-shrink-0">
-                    <Mail className="w-5 h-5" />
+          {/* Contact Info */}
+          <div className="lg:col-span-2 space-y-5">
+            {/* Info Card */}
+            <div className="rounded-2xl bg-cyan-600 text-white p-5 shadow-sm">
+              <h3 className="text-base font-bold mb-4 flex items-center gap-2">
+                <Mail className="w-4 h-4" /> Kontak Langsung
+              </h3>
+              <div className="space-y-4 text-sm">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-4 h-4" />
                   </div>
                   <div>
-                    <p className="text-white/80 text-xs font-bold uppercase tracking-wider mb-2">Email</p>
-                    <p className="text-base font-bold">admin@kotacloud.com</p>
+                    <p className="text-white/70 text-xs uppercase mb-0.5">Email</p>
+                    <p className="font-semibold">admin@kotacloud.com</p>
                   </div>
                 </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 flex-shrink-0">
-                    <Phone className="w-5 h-5" />
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <p className="text-white/80 text-xs font-bold uppercase tracking-wider mb-2">Telepon</p>
-                    <p className="text-base font-bold">+62 812-8871-9249</p>
+                    <p className="text-white/70 text-xs uppercase mb-0.5">Telepon</p>
+                    <p className="font-semibold">+62 812-8871-9249</p>
                   </div>
                 </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 flex-shrink-0">
-                    <MapPin className="w-5 h-5" />
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-4 h-4" />
                   </div>
                   <div>
-                    <p className="text-white/80 text-xs font-bold uppercase tracking-wider mb-2">Alamat</p>
-                    <p className="text-sm font-semibold leading-relaxed">
-                      Jl. Mon. Emmy Saelan III<br />
-                      Makassar, Indonesia
+                    <p className="text-white/70 text-xs uppercase mb-0.5">Alamat</p>
+                    <p className="font-semibold leading-snug">
+                      Jl. Mon. Emmy Saelan III<br />Makassar, Indonesia
                     </p>
                   </div>
                 </div>
@@ -297,7 +205,7 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
             </div>
 
             {/* Map */}
-            <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-gray-100">
+            <div className="rounded-2xl border border-gray-100 bg-white overflow-hidden shadow-sm">
               <div className="aspect-[4/3]">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!4v1750308631270!6m8!1m7!1samvkcRjfs2zoIa_3y2-2gw!2m2!1d-5.176820337970915!2d119.4501674742598!3f97.10036459205142!4f-1.1303750972096651!5f1.3800324185612702"
@@ -308,7 +216,7 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   className="grayscale hover:grayscale-0 transition-all duration-500"
-                ></iframe>
+                />
               </div>
             </div>
           </div>
