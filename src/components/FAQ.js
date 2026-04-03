@@ -61,29 +61,29 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: 'Apa itu Kota Cloud?',
+      question: 'What is Kota Cloud??',
       answer:
-        'Kota Cloud adalah platform solusi jaringan dan cloud computing yang menyatukan perangkat (router, server, aplikasi) dan pengguna dalam satu ekosistem digital yang terhubung. Kami menyediakan sistem berbasis captive portal yang secara otomatis mengarahkan pelanggan ke aplikasi web yang tepat seperti menu pemesanan, dashboard internal, atau portal pembelajaran sesuai kebutuhan bisnis Anda.',
+        'Kota Cloud is a network and cloud computing solutions platform that brings together devices (routers, servers, applications) and users within a single connected digital ecosystem. We provide a captive portal-based system that automatically directs customers to the appropriate web applications such as ordering menus, internal dashboards, or learning portals based on your business needs.',
     },
     {
-      question: 'Bagaimana cara kerja teknologi captive portal Kota Cloud?',
+      question: 'How does Kota Cloud’s captive portal technology work?',
       answer:
-        'Ketika pelanggan terhubung ke Wi‑Fi, captive portal kami secara otomatis mengarahkan mereka ke splash page yang disesuaikan — bisa berupa halaman pemesanan, informasi promosi, atau formulir pengumpulan data. Sistem ini bekerja tanpa memerlukan unduhan aplikasi tambahan, memberikan pengalaman yang seamless bagi pengguna.',
+        'When customers connect to Wi-Fi, our captive portal automatically redirects them to a customized splash page which could be a booking page, promotional information, or a data collection form. The system works without requiring any additional app downloads, providing a seamless experience for users.',
     },
     {
-      question: 'Industri apa saja yang cocok menggunakan Kota Cloud?',
+      question: 'Which industries are best suited for Kota Cloud?',
       answer:
-        'Kota Cloud dirancang untuk berbagai sektor: restoran dan kafe (menu digital otomatis), hotel (booking dan layanan), pusat perbelanjaan (peta interaktif dan promosi), institusi pendidikan (portal pembelajaran), fasilitas kesehatan (sistem informasi pasien), transportasi publik (iklan dan informasi), serta acara dan venue (registrasi dan informasi event).',
+        'Kota Cloud is designed for a variety of sectors: restaurants and cafes (automated digital menus), hotels (bookings and services), shopping centers (interactive maps and promotions), educational institutions (learning portals), healthcare facilities (patient information systems), public transportation (advertisements and information), and events and venues (registration and event information).',
     },
     {
-      question: 'Apa keunggulan Kota Cloud dibanding kompetitor?',
+      question: 'What are Kota Cloud’s advantages over its competitors?',
       answer:
-        'Diferensiator utama kami adalah integrasi pemesanan langsung dalam satu sistem. Berbeda dengan platform Wi‑Fi marketing lain yang hanya fokus pengumpulan data, Kota Cloud memungkinkan pelanggan melakukan pembelian saat itu juga melalui captive portal, langsung mendorong revenue sambil tetap mengumpulkan data berharga untuk analisis bisnis.',
+        'Our key differentiator is the integration of direct ordering into a single system. Unlike other Wi-Fi marketing platforms that focus solely on data collection, Kota Cloud enables customers to make purchases on the spot via a captive portal, driving revenue immediately while still collecting valuable data for business analysis.',
     },
     {
-      question: 'Kapan layanan Kota Cloud akan tersedia?',
+      question: 'When will the Kota Cloud service be available?',
       answer:
-        'Platform Kota Cloud sedang dalam tahap pengembangan dan testing intensif. Kami sedang mempersiapkan launching phase dengan beberapa pilot project di berbagai industri. Subscribe ke newsletter kami untuk mendapatkan update eksklusif tentang availability dan early access program.',
+        'The Kota Cloud platform is currently undergoing intensive development and testing. We are preparing for the launch phase with several pilot projects across various industries. Subscribe to our newsletter to receive exclusive updates on availability and early access programs.',
     },
   ];
 
@@ -103,16 +103,16 @@ export default function FAQ() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-200 bg-white/70 backdrop-blur mb-4">
             <HelpCircle className="w-4 h-4 text-cyan-600" />
-            <span className="text-xs font-medium text-cyan-700">Pertanyaan Umum</span>
+            <span className="text-xs font-medium text-cyan-700">FAQ</span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3 leading-tight">
-            Ada Pertanyaan?
+            Have a Question?
             <br />
-            <span className="bg-gradient-to-r from-cyan-600 to-sky-600 bg-clip-text text-transparent">Kami Punya Jawabannya</span>
+            <span className="bg-gradient-to-r from-cyan-600 to-sky-600 bg-clip-text text-transparent">We Have the Answer</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Temukan semua yang perlu Anda ketahui tentang platform Kota Cloud — dari teknologi captive portal hingga implementasi di berbagai industri.
+            Learn everything you need to know about the Kota Cloud platform from captive portal technology to implementations across various industries.
           </p>
         </div>
 
@@ -133,9 +133,9 @@ export default function FAQ() {
 
           {/* CTA */}
           <div className="mt-10 text-center">
-            <p className="text-sm text-gray-600 mb-4">Masih ada pertanyaan lain? Tim kami siap membantu Anda.</p>
+            <p className="text-sm text-gray-600 mb-4">Do you have any other questions? Our team is here to help.</p>
             <button className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-cyan-600 text-white text-sm font-medium hover:bg-cyan-700 transition-colors">
-              Hubungi Kami
+              Contact Us
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>

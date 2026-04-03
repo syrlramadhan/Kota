@@ -58,10 +58,10 @@ export default function Footer() {
   ];
 
   const quickLinks = [
-    { to: 'home', label: 'Beranda' },
-    { to: 'services', label: 'Layanan' },
+    { to: 'home', label: 'Home' },
+    { to: 'services', label: 'Services' },
     { to: 'faq', label: 'FAQ' },
-    { to: 'contact', label: 'Kontak' },
+    { to: 'contact', label: 'Contact' },
   ];
 
   return (
@@ -94,9 +94,9 @@ export default function Footer() {
                 Kota Cloud
               </h3>
               <p className="text-sm text-white leading-relaxed font-light">
-                Revolusi digital dimulai dari sini.{' '}
+                The digital revolution starts here.{' '}
                 <span className="block mt-1 text-[#0D89CA] font-normal">
-                  Ekosistem teknologi masa depan.
+                  The technology ecosystem of the future.
                 </span>
               </p>
             </div>

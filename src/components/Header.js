@@ -17,14 +17,19 @@ export default function ModernHeader() {
       shortLabel: 'Home',
     },
     { 
-      href: '/informasi', 
-      label: 'Tentang Kami', 
+      href: '/#about', 
+      label: 'About', 
       shortLabel: 'About',
     },
     { 
       href: '/#services', 
-      label: 'Layanan', 
+      label: 'Services', 
       shortLabel: 'Services',
+    },
+    { 
+      href: '/blog', 
+      label: 'Blog', 
+      shortLabel: 'Blog',
     },
   ];
 
@@ -137,7 +142,7 @@ export default function ModernHeader() {
                 href="/#contact"
                 className="px-5 py-2.5 bg-[#46B1CF] text-white text-sm font-normal rounded-lg hover:bg-[#3a9ab5] transition-all duration-300 shadow-md hover:shadow-lg"
               >
-                Hubungi Kami
+                Contact Us
               </NextLink>
             </div>
           </div>

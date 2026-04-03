@@ -27,18 +27,18 @@ export default function Services() {
   const servicesData = [
     {
       icon: Wifi,
-      title: 'Smart Wi-Fi untuk Bisnis',
-      description: 'Ubah Wi-Fi menjadi alat promosi! Setiap pelanggan yang terhubung akan melihat halaman khusus untuk memesan makanan, minuman, atau layanan.',
+      title: 'Smart Wi-Fi for Business',
+      description: 'Turn your Wi-Fi into a promotional tool! Every customer who connects will see a special page for ordering food, drinks, or services.',
     },
     {
       icon: Shield,
-      title: 'Keamanan Terjamin',
-      description: 'Jaringan pelanggan terisolasi dari sistem bisnis Anda, dilindungi dengan enkripsi kuat untuk keamanan data dan kepatuhan.',
+      title: 'Guaranteed Security',
+      description: 'The customer network is isolated from your business system and protected by strong encryption to ensure data security and compliance.',
     },
     {
       icon: Cloud,
-      title: 'Sistem Cloud On-Premise',
-      description: 'Jalankan aplikasi langsung dari perangkat kami tanpa internet eksternal. Sistem cepat, andal, dan bekerja secara offline.',
+      title: 'Cloud and On-Premise Systems',
+      description: 'Run the app directly on our devices without an external internet connection. The system is fast, reliable, and works offline.',
     },
   ];
 
@@ -53,16 +53,16 @@ export default function Services() {
           <div className="space-y-8">
             <div className="space-y-6">
               <div className="inline-block px-4 py-2 bg-cyan-50 rounded-full">
-                <span className="text-sm font-semibold text-cyan-600 tracking-wide">Layanan Kami</span>
+                <span className="text-sm font-semibold text-cyan-600 tracking-wide">Our Services</span>
               </div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 leading-[1.15] tracking-tight">
-                Transformasi Digital
+                Digital Transformation
                 <span className="block mt-2 bg-gradient-to-r from-cyan-500 to-[#46B1CF] bg-clip-text text-transparent">
-                  Dimulai dari Sini
+                  It Starts Here
                 </span>
               </h1>
               <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                Solusi Smart Wi-Fi yang mengubah setiap koneksi menjadi peluang bisnis. Tingkatkan keterlibatan pelanggan dan optimalkan operasi dengan teknologi cloud terdepan.
+                A Smart Wi-Fi solution that turns every connection into a business opportunity. Boost customer engagement and optimize operations with cutting-edge cloud technology.
               </p>
             </div>
           </div>

@@ -51,16 +51,16 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-200 bg-white/70 backdrop-blur mb-4">
             <Mail className="w-4 h-4 text-cyan-600" />
-            <span className="text-xs font-medium text-cyan-700">Hubungi Kami</span>
+            <span className="text-xs font-medium text-cyan-700">Contact Us</span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3 leading-tight">
-            Mari Berkolaborasi
+            Let’s Collaborate
           </h2>
           <p className="text-sm sm:text-base text-gray-600 max-w-xl mx-auto">
-            Siap mentransformasi bisnis Anda dengan teknologi Kota Cloud?{' '}
-            <span className="text-cyan-600 font-medium">Tim ahli kami menunggu untuk berdiskusi dengan Anda.</span>
+            Ready to transform your business with Kota Cloud technology?{' '}
           </p>
+          <span className="text-cyan-600 font-medium">Our team of experts is ready to discuss this with you.</span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
@@ -68,9 +68,9 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
           <div className="lg:col-span-3">
             <div className="rounded-2xl border border-gray-100 bg-white/80 backdrop-blur shadow-sm p-6">
               <div className="mb-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-1">Ceritakan Kebutuhan Anda</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-1">Tell Us About Your Needs</h3>
                 <p className="text-sm text-gray-600">
-                  Kami akan merespon dalam <span className="font-semibold text-cyan-600">24 jam</span> dengan solusi terbaik
+                  We will respond within <span className="font-semibold text-cyan-600">24 hours</span> with the best solution
                 </p>
               </div>
 
@@ -78,7 +78,7 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
                 {/* Name */}
                 <div>
                   <label htmlFor="name" className="block text-xs font-semibold text-gray-700 mb-2">
-                    Nama Lengkap <span className="text-red-500">*</span>
+                    Full Name <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
                     <input
@@ -86,7 +86,7 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
                       id="name"
                       name="name"
                       className={`w-full px-4 py-3 text-sm border rounded-xl bg-gray-50 transition focus:bg-white focus:ring-2 focus:ring-cyan-100 focus:border-cyan-500 ${shakeFields?.name ? 'border-red-300' : 'border-gray-200'}`}
-                      placeholder="Masukkan nama lengkap Anda"
+                      placeholder="Enter your full name"
                       value={formData?.name || ''}
                       onChange={handleChange}
                       onFocus={() => setFocusedField('name')}
@@ -100,7 +100,7 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
                 {/* Email */}
                 <div>
                   <label htmlFor="email" className="block text-xs font-semibold text-gray-700 mb-2">
-                    Alamat Email <span className="text-red-500">*</span>
+                    Email Address <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
                     <input
@@ -108,7 +108,7 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
                       id="email"
                       name="email"
                       className={`w-full px-4 py-3 text-sm border rounded-xl bg-gray-50 transition focus:bg-white focus:ring-2 focus:ring-cyan-100 focus:border-cyan-500 ${shakeFields?.email ? 'border-red-300' : 'border-gray-200'}`}
-                      placeholder="nama@perusahaan.com"
+                      placeholder="name@company.com"
                       value={formData?.email || ''}
                       onChange={handleChange}
                       onFocus={() => setFocusedField('email')}
@@ -122,7 +122,7 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
                 {/* Message */}
                 <div>
                   <label htmlFor="message" className="block text-xs font-semibold text-gray-700 mb-2">
-                    Pesan Anda <span className="text-red-500">*</span>
+                    Your message <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
                     <textarea
@@ -130,7 +130,7 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
                       name="message"
                       rows="4"
                       className={`w-full px-4 py-3 text-sm border rounded-xl bg-gray-50 resize-none transition focus:bg-white focus:ring-2 focus:ring-cyan-100 focus:border-cyan-500 ${shakeFields?.message ? 'border-red-300' : 'border-gray-200'}`}
-                      placeholder="Ceritakan tentang bisnis Anda dan bagaimana Kota Cloud dapat membantu..."
+                      placeholder="Tell us about your business and how Kota Cloud can help..."
                       value={formData?.message || ''}
                       onChange={handleChange}
                       onFocus={() => setFocusedField('message')}
@@ -151,12 +151,12 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
                   {loading ? (
                     <>
                       <div className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full" />
-                      <span>Mengirim...</span>
+                      <span>Sending...</span>
                     </>
                   ) : (
                     <>
                       <Send className="w-4 h-4" />
-                      <span>Kirim Pesan Sekarang</span>
+                      <span>Send a Message Now</span>
                     </>
                   )}
                 </button>
@@ -169,7 +169,7 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
             {/* Info Card */}
             <div className="rounded-2xl bg-cyan-600 text-white p-5 shadow-sm">
               <h3 className="text-base font-bold mb-4 flex items-center gap-2">
-                <Mail className="w-4 h-4" /> Kontak Langsung
+                <Mail className="w-4 h-4" /> Direct Contact
               </h3>
               <div className="space-y-4 text-sm">
                 <div className="flex items-start gap-3">
@@ -186,7 +186,7 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <p className="text-white/70 text-xs uppercase mb-0.5">Telepon</p>
+                    <p className="text-white/70 text-xs uppercase mb-0.5">Phone</p>
                     <p className="font-semibold">+62 812-8871-9249</p>
                   </div>
                 </div>
@@ -195,7 +195,7 @@ export default function Contact({ formData, shakeFields, handleFormSubmit, handl
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
-                    <p className="text-white/70 text-xs uppercase mb-0.5">Alamat</p>
+                    <p className="text-white/70 text-xs uppercase mb-0.5">Address</p>
                     <p className="font-semibold leading-snug">
                       Jl. Mon. Emmy Saelan III<br />Makassar, Indonesia
                     </p>

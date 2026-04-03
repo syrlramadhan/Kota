@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Zap } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 import { DotScreenShader } from '@/components/ui/dot-shader-background';
@@ -37,7 +37,7 @@ export default function Hero() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
             }`}
           >
-            <span className="w-1.5 h-1.5 bg-cyan-500 rounded-full animate-pulse" />
+            <Zap className="w-4 h-4" style={{ color: '#46B1CF' }} />
             <span className="text-xs font-semibold text-gray-700">Smart Network Solutions</span>
           </div>
 
@@ -47,10 +47,11 @@ export default function Hero() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
             }`}
           >
+            Simple and Effective
+            {' '}
             <span className="bg-gradient-to-r from-cyan-600 via-sky-600 to-blue-600 bg-clip-text text-transparent">
-              Transformasi Digital
-            </span>{' '}
-            yang Sederhana dan Efektif
+              Digital Transformation
+            </span>
           </h1>
 
           {/* Description */}
@@ -59,8 +60,7 @@ export default function Hero() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
             }`}
           >
-            Solusi Wi-Fi dan cloud terintegrasi untuk mendorong efisiensi, meningkatkan
-            pengalaman pelanggan, dan mempercepat pertumbuhan bisnis Anda.
+            Integrated Wi-Fi and cloud solutions to drive efficiency, enhance the customer experience, and accelerate your business growth.
           </p>
 
           {/* CTAs */}
@@ -75,7 +75,7 @@ export default function Hero() {
               duration={500}
               className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-cyan-600 text-white text-sm font-normal shadow-sm hover:bg-cyan-700 hover:shadow-lg hover:shadow-cyan-200 cursor-pointer transition-all"
             >
-              Jelajahi Layanan
+              Explore Our Services
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
 
@@ -85,7 +85,7 @@ export default function Hero() {
               duration={500}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-gray-700 text-sm font-normal border border-gray-200 hover:border-gray-300 hover:shadow-md cursor-pointer transition-all"
             >
-              Hubungi Kami
+              Contact Us
             </Link>
           </div>
 

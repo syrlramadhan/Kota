@@ -9,25 +9,25 @@ export default function BrandSection() {
     { 
       icon: Wifi,
       title: "Smart Connectivity", 
-      description: "Teknologi captive portal yang mengubah Wi-Fi menjadi aset strategis bisnis Anda",
+      description: "Captive portal technology that turns Wi-Fi into a strategic business asset",
       color: "#46B1CF"
     },
     { 
       icon: TrendingUp,
       title: "Data-Driven Growth", 
-      description: "Kumpulkan insights berharga untuk analitik dan kampanye marketing yang tepat sasaran",
+      description: "Gather valuable insights for analytics and targeted marketing campaigns",
       color: "#E80035"
     },
     {
       icon: Shield,
       title: "Secure & Scalable", 
-      description: "Infrastruktur aman dengan pemisahan jaringan dan proteksi enterprise-grade",
+      description: "Secure infrastructure with network segmentation and enterprise-grade protection",
       color: "#46B1CF"
     },
     {
       icon: Cloud,
       title: "Seamless Integration", 
-      description: "Platform terintegrasi yang menghubungkan perangkat dan pengguna dalam satu ekosistem",
+      description: "An integrated platform that connects devices and users within a single ecosystem",
       color: "#E80035"
     },
   ];
@@ -60,7 +60,7 @@ export default function BrandSection() {
           >
             <Zap className="w-4 h-4" style={{ color: '#46B1CF' }} />
             <span className="font-semibold text-xs tracking-wide" style={{ color: '#46B1CF' }}>
-              Platform Inovatif untuk Bisnis Masa Depan
+              An Innovative Platform for the Business of the Future
             </span>
           </div>
 
@@ -75,7 +75,7 @@ export default function BrandSection() {
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg text-gray-600 font-normal max-w-4xl mx-auto mb-8">
-            Memberdayakan Bisnis dengan Konektivitas Cerdas dan Solusi Cloud Terintegrasi
+            Empowering Businesses with Smart Connectivity and Integrated Cloud Solutions
           </p>
 
           {/* Decorative Line */}
@@ -96,10 +96,10 @@ export default function BrandSection() {
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-gray-100">
             <div className="space-y-6 text-base sm:text-lg text-gray-700 leading-relaxed">
               <p className="text-justify">
-                <strong className="font-medium text-gray-900">Kota Cloud</strong> adalah platform perintis yang mengubah cara bisnis terhubung dengan pelanggan. Dengan mengintegrasikan jaringan canggih dan cloud computing, kami menciptakan ekosistem digital yang seamless—seperti kota pintar di era digital. Solusi kami menggabungkan <span className="font-normal" style={{ color: '#46B1CF' }}>sistem pemesanan intuitif</span> dengan <span className="font-normal" style={{ color: '#E80035' }}>alat Wi-Fi marketing yang powerful</span>, memungkinkan bisnis mendorong revenue langsung dan pertumbuhan jangka panjang melalui insights berbasis data.
+                <strong className="font-medium text-gray-900">Kota Cloud</strong> is a pioneering platform that is transforming the way businesses connect with customers. By integrating advanced networks and cloud computing, we create a seamless digital ecosystem—much like a smart city in the digital age. Our solutions combine an <span className="font-normal" style={{ color: '#46B1CF' }}>intuitive ordering system</span> with <span className="font-normal" style={{ color: '#E80035' }}>powerful Wi-Fi marketing tools</span>, enabling businesses to drive immediate revenue and long-term growth through data-driven insights.
               </p>
               <p className="text-justify">
-                Visi kami adalah memimpin secara global dalam solusi jaringan dan cloud terintegrasi, memberdayakan bisnis di Indonesia dan seluruh dunia dengan teknologi inovatif dan berkelanjutan. Dari hospitality hingga healthcare, retail hingga sektor publik, Kota Cloud menghadirkan solusi yang <span className="font-normal text-gray-900">aman, scalable, dan user-friendly</span> yang mendefinisikan ulang efisiensi operasional dan customer engagement.
+                Our vision is to be a global leader in integrated networking and cloud solutions, empowering businesses in Indonesia and around the world with innovative and sustainable technology. From hospitality to healthcare, retail to the public sector, Kota Cloud delivers <span className="font-normal text-gray-900">secure, scalable, and user-friendly</span> solutions that redefine operational efficiency and customer engagement.
               </p>
             </div>
           </div>
@@ -114,10 +114,10 @@ export default function BrandSection() {
             className="text-center mb-12"
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
-              Keunggulan Platform Kami
+              The Benefits of Our Platform
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-              Empat pilar utama yang menjadikan Kota Cloud solusi terdepan untuk transformasi digital bisnis Anda
+              The four key pillars that make Kota Cloud the leading solution for your business’s digital transformation
             </p>
           </motion.div>
 
@@ -161,7 +161,7 @@ export default function BrandSection() {
               className="inline-flex items-center justify-center px-6 py-3 text-white font-normal text-sm rounded-full shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer group"
               style={{ background: 'linear-gradient(135deg, #46B1CF, #3a8fa8)' }}
             >
-              <span>Hubungi Kami Sekarang</span>
+              <span>Contact Us Now</span>
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
             
@@ -172,7 +172,7 @@ export default function BrandSection() {
               className="inline-flex items-center justify-center px-6 py-3 bg-white font-normal text-sm rounded-full border shadow-sm hover:shadow-md transform hover:scale-105 transition-all duration-300 cursor-pointer"
               style={{ borderColor: '#46B1CF', color: '#46B1CF' }}
             >
-              Pelajari Lebih Lanjut
+              Learn More
             </Link>
           </div>
         </motion.div>

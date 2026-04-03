@@ -28,22 +28,22 @@ export default function About() {
     {
       icon: Wifi,
       title: 'Smart WiFi',
-      description: 'Captive portal yang mengubah WiFi menjadi aset strategis bisnis'
+      description: 'A captive portal that turns WiFi into a strategic business asset'
     },
     {
       icon: Cloud,
       title: 'Cloud Platform',
-      description: 'Sistem terintegrasi untuk perangkat, pengguna, dan data'
+      description: 'An integrated system for devices, users, and data'
     },
     {
       icon: TrendingUp,
       title: 'Data Analytics',
-      description: 'Insight mendalam untuk mendorong pertumbuhan bisnis'
+      description: 'In-depth insights to drive business growth'
     },
     {
       icon: Shield,
       title: 'Enterprise Security',
-      description: 'Infrastruktur aman dengan proteksi kelas dunia'
+      description: 'Secure infrastructure with world-class protection'
     }
   ];
 
@@ -59,18 +59,17 @@ export default function About() {
         <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-rose-200 bg-rose-50 mb-4">
             <span className="w-1.5 h-1.5 bg-rose-500 rounded-full"></span>
-            <span className="text-xs font-medium text-rose-600">Tentang Kota Cloud</span>
+            <span className="text-xs font-medium text-rose-600">About Kota Cloud</span>
           </div>
           
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Platform WiFi Marketing &
+            Integrated WiFi Marketing &
             <br />
-            <span className="text-cyan-600">Cloud Computing Terpadu</span>
+            <span className="text-cyan-600">Cloud Computing Platform</span>
           </h2>
           
           <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Kota Cloud menghadirkan solusi konektivitas terintegrasi yang memberdayakan bisnis 
-            dengan analitik mendalam, otomatisasi pemasaran, dan keamanan enterprise-grade.
+            Kota Cloud offers integrated connectivity solutions that empower businesses with in-depth analytics, marketing automation, and enterprise-grade security.
           </p>
         </div>
 
@@ -93,7 +92,7 @@ export default function About() {
         {/* CTA */}
         <div className={`text-center mt-10 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <button className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-medium text-sm rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-cyan-200">
-            Pelajari Lebih Lanjut
+            Learn More
             <Cloud className="w-4 h-4" />
           </button>
         </div>
