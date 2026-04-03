@@ -26,11 +26,11 @@ export default function ModernHeader() {
       label: 'Services', 
       shortLabel: 'Services',
     },
-    { 
-      href: '/blog', 
-      label: 'Blog', 
-      shortLabel: 'Blog',
-    },
+    // { 
+    //   href: '/blog', 
+    //   label: 'Blog', 
+    //   shortLabel: 'Blog',
+    // },
   ];
 
   useEffect(() => {
